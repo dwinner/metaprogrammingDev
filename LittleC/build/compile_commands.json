@@ -1,0 +1,22 @@
+[
+{
+  "directory": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-gcc.exe   -g -std=gnu11 -o CMakeFiles/LittleC.dir/main.c.obj -c G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c",
+  "file": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c"
+},
+{
+  "directory": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-gcc.exe   -g -std=gnu11 -o CMakeFiles/LittleC.dir/littlec_lib.c.obj -c G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c",
+  "file": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c"
+},
+{
+  "directory": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-gcc.exe   -g -std=gnu11 -o CMakeFiles/LittleC.dir/littlec_parser.c.obj -c G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c",
+  "file": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c"
+},
+{
+  "directory": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-gcc.exe   -g -std=gnu11 -o CMakeFiles/LittleC.dir/littlec_app.c.obj -c G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c",
+  "file": "G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c"
+}
+]
