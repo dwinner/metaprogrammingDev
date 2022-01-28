@@ -48,10 +48,10 @@ RM = /cygdrive/c/Users/Den/AppData/Local/JetBrains/CLion2020.1/cygwin_cmake/bin/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter
+CMAKE_SOURCE_DIR = /cygdrive/g/metaproDev/LittleC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/g/metaproDev/LittleC/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles /cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

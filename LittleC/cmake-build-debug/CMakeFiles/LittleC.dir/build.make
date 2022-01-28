@@ -43,10 +43,10 @@ RM = /cygdrive/c/Users/Den/AppData/Local/JetBrains/CLion2020.1/cygwin_cmake/bin/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter
+CMAKE_SOURCE_DIR = /cygdrive/g/metaproDev/LittleC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/g/metaproDev/LittleC/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LittleC.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/LittleC.dir/flags.make
 
 CMakeFiles/LittleC.dir/main.c.o: CMakeFiles/LittleC.dir/flags.make
 CMakeFiles/LittleC.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/LittleC.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/main.c.o   -c /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/LittleC.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/main.c.o   -c /cygdrive/g/metaproDev/LittleC/main.c
 
 CMakeFiles/LittleC.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LittleC.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c > CMakeFiles/LittleC.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/metaproDev/LittleC/main.c > CMakeFiles/LittleC.dir/main.c.i
 
 CMakeFiles/LittleC.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LittleC.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c -o CMakeFiles/LittleC.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/metaproDev/LittleC/main.c -o CMakeFiles/LittleC.dir/main.c.s
 
 CMakeFiles/LittleC.dir/littlec_lib.c.o: CMakeFiles/LittleC.dir/flags.make
 CMakeFiles/LittleC.dir/littlec_lib.c.o: ../littlec_lib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/LittleC.dir/littlec_lib.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/littlec_lib.c.o   -c /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/LittleC.dir/littlec_lib.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/littlec_lib.c.o   -c /cygdrive/g/metaproDev/LittleC/littlec_lib.c
 
 CMakeFiles/LittleC.dir/littlec_lib.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LittleC.dir/littlec_lib.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c > CMakeFiles/LittleC.dir/littlec_lib.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/metaproDev/LittleC/littlec_lib.c > CMakeFiles/LittleC.dir/littlec_lib.c.i
 
 CMakeFiles/LittleC.dir/littlec_lib.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LittleC.dir/littlec_lib.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c -o CMakeFiles/LittleC.dir/littlec_lib.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/metaproDev/LittleC/littlec_lib.c -o CMakeFiles/LittleC.dir/littlec_lib.c.s
 
 CMakeFiles/LittleC.dir/littlec_parser.c.o: CMakeFiles/LittleC.dir/flags.make
 CMakeFiles/LittleC.dir/littlec_parser.c.o: ../littlec_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/LittleC.dir/littlec_parser.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/littlec_parser.c.o   -c /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/LittleC.dir/littlec_parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/littlec_parser.c.o   -c /cygdrive/g/metaproDev/LittleC/littlec_parser.c
 
 CMakeFiles/LittleC.dir/littlec_parser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LittleC.dir/littlec_parser.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c > CMakeFiles/LittleC.dir/littlec_parser.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/metaproDev/LittleC/littlec_parser.c > CMakeFiles/LittleC.dir/littlec_parser.c.i
 
 CMakeFiles/LittleC.dir/littlec_parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LittleC.dir/littlec_parser.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c -o CMakeFiles/LittleC.dir/littlec_parser.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/metaproDev/LittleC/littlec_parser.c -o CMakeFiles/LittleC.dir/littlec_parser.c.s
 
 CMakeFiles/LittleC.dir/littlec_app.c.o: CMakeFiles/LittleC.dir/flags.make
 CMakeFiles/LittleC.dir/littlec_app.c.o: ../littlec_app.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/LittleC.dir/littlec_app.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/littlec_app.c.o   -c /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/LittleC.dir/littlec_app.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/LittleC.dir/littlec_app.c.o   -c /cygdrive/g/metaproDev/LittleC/littlec_app.c
 
 CMakeFiles/LittleC.dir/littlec_app.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/LittleC.dir/littlec_app.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c > CMakeFiles/LittleC.dir/littlec_app.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/g/metaproDev/LittleC/littlec_app.c > CMakeFiles/LittleC.dir/littlec_app.c.i
 
 CMakeFiles/LittleC.dir/littlec_app.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/LittleC.dir/littlec_app.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c -o CMakeFiles/LittleC.dir/littlec_app.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/g/metaproDev/LittleC/littlec_app.c -o CMakeFiles/LittleC.dir/littlec_app.c.s
 
 # Object files for target LittleC
 LittleC_OBJECTS = \
@@ -125,7 +125,7 @@ LittleC.exe: CMakeFiles/LittleC.dir/littlec_parser.c.o
 LittleC.exe: CMakeFiles/LittleC.dir/littlec_app.c.o
 LittleC.exe: CMakeFiles/LittleC.dir/build.make
 LittleC.exe: CMakeFiles/LittleC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable LittleC.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable LittleC.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LittleC.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/LittleC.dir/clean:
 .PHONY : CMakeFiles/LittleC.dir/clean
 
 CMakeFiles/LittleC.dir/depend:
-	cd /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles/LittleC.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/g/metaproDev/LittleC/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/g/metaproDev/LittleC /cygdrive/g/metaproDev/LittleC /cygdrive/g/metaproDev/LittleC/cmake-build-debug /cygdrive/g/metaproDev/LittleC/cmake-build-debug /cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles/LittleC.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LittleC.dir/depend
 

@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c" "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles/LittleC.dir/littlec_app.c.o"
-  "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c" "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles/LittleC.dir/littlec_lib.c.o"
-  "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c" "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles/LittleC.dir/littlec_parser.c.o"
-  "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c" "/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles/LittleC.dir/main.c.o"
+  "/cygdrive/g/metaproDev/LittleC/littlec_app.c" "/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles/LittleC.dir/littlec_app.c.o"
+  "/cygdrive/g/metaproDev/LittleC/littlec_lib.c" "/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles/LittleC.dir/littlec_lib.c.o"
+  "/cygdrive/g/metaproDev/LittleC/littlec_parser.c" "/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles/LittleC.dir/littlec_parser.c.o"
+  "/cygdrive/g/metaproDev/LittleC/main.c" "/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles/LittleC.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

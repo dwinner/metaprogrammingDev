@@ -44,10 +44,10 @@ RM = /cygdrive/c/Users/Den/AppData/Local/JetBrains/CLion2020.1/cygwin_cmake/bin/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter
+CMAKE_SOURCE_DIR = /cygdrive/g/metaproDev/LittleC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/g/metaproDev/LittleC/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/LittleC.dir/clean
 CMakeFiles/LittleC.dir/all:
 	$(MAKE) -f CMakeFiles/LittleC.dir/build.make CMakeFiles/LittleC.dir/depend
 	$(MAKE) -f CMakeFiles/LittleC.dir/build.make CMakeFiles/LittleC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target LittleC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target LittleC"
 .PHONY : CMakeFiles/LittleC.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/LittleC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LittleC.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/g/metaproDev/LittleC/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/LittleC.dir/rule
 
 # Convenience name for target.

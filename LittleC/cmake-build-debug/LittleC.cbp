@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/g/metaproDev/LittleC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/g/metaproDev/LittleC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/g/metaproDev/LittleC/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="LittleC">
-				<Option output="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/LittleC.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug"/>
+				<Option output="/cygdrive/g/metaproDev/LittleC/cmake-build-debug/LittleC.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/g/metaproDev/LittleC/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,15 +49,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 LittleC"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 LittleC"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="LittleC/fast">
-				<Option output="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/LittleC.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug"/>
+				<Option output="/cygdrive/g/metaproDev/LittleC/cmake-build-debug/LittleC.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/g/metaproDev/LittleC/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,35 +67,35 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 LittleC/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 LittleC/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/g/metaproDev/LittleC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.c">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/littlec_app.c">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_app.h">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/littlec_app.h">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.c">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/littlec_lib.c">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_lib.h">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/littlec_lib.h">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.c">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/littlec_parser.c">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/littlec_parser.h">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/littlec_parser.h">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/main.c">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/main.c">
 			<Option target="LittleC"/>
 		</Unit>
-		<Unit filename="/cygdrive/g/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/CMakeLists.txt">
+		<Unit filename="/cygdrive/g/metaproDev/LittleC/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
