@@ -1,9 +1,11 @@
+
+
 1. Install your current JDK into c:/jdk;
 
 2. Edit environment variables under User variables;
    - Add to Path: %JAVA_HOME%\bin;
    - Add to Path: %CLASSPATH%;
-
+   
 3. Download antlr.jar (from official site);
    - Put antlr.jar under the folder c:\JavaLib\;
    - Create antlr4.bat: java org.antlr.v4.Tool %*;
