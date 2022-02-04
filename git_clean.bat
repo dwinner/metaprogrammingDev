@@ -10,6 +10,7 @@ for /d /r "." %%d in (.vs) do @if exist "%%d" rd /s/q "%%d"
 for /d /r "." %%d in (.idea) do @if exist "%%d" rd /s/q "%%d"
 for /d /r "." %%d in (.antlr) do @if exist "%%d" rd /s/q "%%d"
 for /d /r "." %%d in (out) do @if exist "%%d" rd /s/q "%%d"
+for /d /r "." %%d in (gen) do @if exist "%%d" rd /s/q "%%d"
 for /d /r "." %%d in (build) do @if exist "%%d" rd /s/q "%%d"
 for /d /r "." %%d in (cmake-build-debug) do @if exist "%%d" rd /s/q "%%d"
 del /f /s /q .\*.sdf

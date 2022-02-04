@@ -489,13 +489,16 @@ timerType: Timer Identifier (Dot (Identifier | Star))?;
 Timer: [Tt][iI][mM][eE][rR];
 
 messageType
-    : Message Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-	| Message Star
-	| Message Constant
-	| Message Identifier (Minus | DoubleColon)? Identifier
-	| Message MessageHexConst (Minus MessageHexConst)?
-	| Message Constant (Minus Constant)?
-	| Message Identifier Minus Whitespace? Constant
+    : Message
+    (
+        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
+        | Star
+        | Constant
+        | Identifier (Minus | DoubleColon)? Identifier
+        | MessageHexConst (Minus MessageHexConst)?
+        | Constant (Minus Constant)?
+        | Identifier Minus Whitespace? Constant
+    )
 	;
 Message: [mM][eE][sS][sS][aA][gG][eE];
 
