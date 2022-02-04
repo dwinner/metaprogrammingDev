@@ -10,20 +10,20 @@ includes
 variables
 {
     // message declarations
-    message * eTemp;
+    message * eTemp1, eTemp2;
     message EngData EDMsg; // declares EDMsg as type EngData
     multiplexed_message * eTemp;
     multiplexed_message EngData EDMsg;
     mostAmsMessage * eTemp;
     mostAmsMessage EngData EDMsg;
     mostMessage * eTemp;
-    mostMessage EngData EDMsg;
+    mostMessage EngData EDMsg1, EDMsg1;
     message * all;
     message 100 msg; // CAN message
     msTimer myTimer; // creates a millisecond timer
     message wake-up xxx; // see Chapter 11 on using messages for more detail
     message 100 msg; // creates message 100
-    message 0x555 msg1 = {dlc = 1};
+    message 0x555 msg1 = {dlc = 1}, msg2 = {dlc = 2};
     message 0x400 msgA = {dlc=1};
     message 0x100 eTemp = {DLC = 8};
     message 0x100 msg2 = {dlc = 8}; // declare message to send

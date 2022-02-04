@@ -503,60 +503,76 @@ messageType
 Message: [mM][eE][sS][sS][aA][gG][eE];
 
 multiplexedMessageType
-    : MultiplexedMessage Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-	| MultiplexedMessage Star
-	| MultiplexedMessage Constant
-	| MultiplexedMessage Identifier (Minus | DoubleColon)? Identifier
-	| MultiplexedMessage MessageHexConst (Minus MessageHexConst)?
-	| MultiplexedMessage Constant (Minus Constant)?
-	| MultiplexedMessage Identifier Minus Whitespace? Constant
-	;
+    : MultiplexedMessage
+    (
+        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
+        | Star
+        | Constant
+        | Identifier (Minus | DoubleColon)? Identifier
+        | MessageHexConst (Minus MessageHexConst)?
+        | Constant (Minus Constant)?
+        | Identifier Minus Whitespace? Constant
+    )
+    ;
 MultiplexedMessage: [mM][uU][lL][tT][iI][pP][lL][eE][xX][eE][dD][_][mM][eE][sS][sS][aA][gG][eE];
 
 mostMessageType
-    : MostMessage Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-	| MostMessage Star
-	| MostMessage Constant
-	| MostMessage Identifier (Minus | DoubleColon)? Identifier
-	| MostMessage MessageHexConst (Minus MessageHexConst)?
-	| MostMessage Constant (Minus Constant)?
-	| MostMessage Identifier Minus Whitespace? Constant
-	;
+    : MostMessage
+    (
+        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
+        | Star
+        | Constant
+        | Identifier (Minus | DoubleColon)? Identifier
+        | MessageHexConst (Minus MessageHexConst)?
+        | Constant (Minus Constant)?
+        | Identifier Minus Whitespace? Constant
+    )
+    ;
 
 mostAmsMessageType
-    : MostAmsMessage Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-	| MostAmsMessage Star
-	| MostAmsMessage Constant
-	| MostAmsMessage Identifier (Minus | DoubleColon)? Identifier
-	| MostAmsMessage MessageHexConst (Minus MessageHexConst)?
-	| MostAmsMessage Constant (Minus Constant)?
-	| MostAmsMessage Identifier Minus Whitespace? Constant
-	;
+    : MostAmsMessage
+    (
+        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
+        | Star
+        | Constant
+        | Identifier (Minus | DoubleColon)? Identifier
+        | MessageHexConst (Minus MessageHexConst)?
+        | Constant (Minus Constant)?
+        | Identifier Minus Whitespace? Constant
+    )
+    ;
 
 diagRequestType:
-	DiagRequest Identifier (
-		(Dot | DoubleColon) (Identifier | Star)
-	)?
-	| DiagRequest Star
-	| DiagRequest Constant
-	| DiagRequest Identifier Minus Identifier;
+	DiagRequest
+	(
+	    Identifier ((Dot | DoubleColon) (Identifier | Star))?
+	    | Star
+	    | Constant
+	    | Identifier Minus Identifier
+	)
+	;
 DiagRequest: [dD][iI][aA][gG][rR][eE][qQ][uU][eE][sS][tT];
 
 diagResponseType:
-	DiagResponse Identifier (
-		(Dot | DoubleColon) (Identifier | Star)
-	)?
-	| DiagResponse Star
-	| DiagResponse Constant
-	| DiagResponse Identifier Minus Identifier;
+	DiagResponse
+	(
+	    Identifier ((Dot | DoubleColon) (Identifier | Star))?
+	    | Star
+	    | Constant
+	    | Identifier Minus Identifier
+	)
+	;
 DiagResponse: [dD][iI][aA][gG][rR][eE][sS][pP][oO][nN][sS][eE];
 
 signalType
-    : Signal Identifier ((Dot | DoubleColon) (Identifier | Star))?
-	| Signal Star
-	| Signal Constant
-	| Signal Identifier Minus Identifier
-	;
+    : Signal
+    (
+        Identifier ((Dot | DoubleColon) (Identifier | Star))?
+        | Star
+        | Constant
+        | Identifier Minus Identifier
+    )
+    ;
 Signal: [sS][iI][gG][nN][aA][lL];
 
 sysvarType
@@ -570,20 +586,26 @@ sysvarUpdateType
     ;
 
 ethernetPacketType
-    : EthernetPacket Identifier (Dot (Identifier | Star))?
-	| EthernetPacket Star
-	| EthernetPacket Constant
-	| EthernetPacket Identifier (Minus | DoubleColon)? Identifier
-	;
+    : EthernetPacket
+    (
+        Identifier (Dot (Identifier | Star))?
+        | Star
+        | Constant
+        | Identifier (Minus | DoubleColon)? Identifier
+    )
+    ;
 
 ethernetStatusType
-    : EthernetStatus Identifier (Dot (Identifier | Star))?
-	| EthernetStatus Star
-	| EthernetStatus Constant
-	| EthernetStatus Identifier (Minus | DoubleColon)? Identifier
-	;
+    : EthernetStatus
+    (
+        Identifier (Dot (Identifier | Star))?
+        | Star
+        | Constant
+        | Identifier (Minus | DoubleColon)? Identifier
+    )
+    ;
 
-keyEventType: Key Constant | Key KeyConstants | Key Star;
+keyEventType: Key (Constant | KeyConstants | Star);
 
 KeyConstants: (
 		F1Key
