@@ -182,45 +182,15 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitOnAnySection([NotNull] CaplParser.OnAnySectionContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.multiplexedMessageSection"/>.
+	/// Enter a parse tree produced by <see cref="CaplParser.diagSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterMultiplexedMessageSection([NotNull] CaplParser.MultiplexedMessageSectionContext context);
+	void EnterDiagSection([NotNull] CaplParser.DiagSectionContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.multiplexedMessageSection"/>.
+	/// Exit a parse tree produced by <see cref="CaplParser.diagSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitMultiplexedMessageSection([NotNull] CaplParser.MultiplexedMessageSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.mostMessageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterMostMessageSection([NotNull] CaplParser.MostMessageSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.mostMessageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitMostMessageSection([NotNull] CaplParser.MostMessageSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.diagRequestSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDiagRequestSection([NotNull] CaplParser.DiagRequestSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.diagRequestSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDiagRequestSection([NotNull] CaplParser.DiagRequestSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.diagResponseSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDiagResponseSection([NotNull] CaplParser.DiagResponseSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.diagResponseSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDiagResponseSection([NotNull] CaplParser.DiagResponseSectionContext context);
+	void ExitDiagSection([NotNull] CaplParser.DiagSectionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.signalSection"/>.
 	/// </summary>
@@ -252,35 +222,15 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.ethernetPacketSection"/>.
+	/// Enter a parse tree produced by <see cref="CaplParser.ethernetSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterEthernetPacketSection([NotNull] CaplParser.EthernetPacketSectionContext context);
+	void EnterEthernetSection([NotNull] CaplParser.EthernetSectionContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.ethernetPacketSection"/>.
+	/// Exit a parse tree produced by <see cref="CaplParser.ethernetSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitEthernetPacketSection([NotNull] CaplParser.EthernetPacketSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.ethernetStatusSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEthernetStatusSection([NotNull] CaplParser.EthernetStatusSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.ethernetStatusSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEthernetStatusSection([NotNull] CaplParser.EthernetStatusSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.mostAmsMessageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterMostAmsMessageSection([NotNull] CaplParser.MostAmsMessageSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.mostAmsMessageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitMostAmsMessageSection([NotNull] CaplParser.MostAmsMessageSectionContext context);
+	void ExitEthernetSection([NotNull] CaplParser.EthernetSectionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.stopMeasurementSection"/>.
 	/// </summary>
@@ -1022,55 +972,15 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitMessageType([NotNull] CaplParser.MessageTypeContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.multiplexedMessageType"/>.
+	/// Enter a parse tree produced by <see cref="CaplParser.diagType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterMultiplexedMessageType([NotNull] CaplParser.MultiplexedMessageTypeContext context);
+	void EnterDiagType([NotNull] CaplParser.DiagTypeContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.multiplexedMessageType"/>.
+	/// Exit a parse tree produced by <see cref="CaplParser.diagType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitMultiplexedMessageType([NotNull] CaplParser.MultiplexedMessageTypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.mostMessageType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterMostMessageType([NotNull] CaplParser.MostMessageTypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.mostMessageType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitMostMessageType([NotNull] CaplParser.MostMessageTypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.mostAmsMessageType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterMostAmsMessageType([NotNull] CaplParser.MostAmsMessageTypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.mostAmsMessageType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitMostAmsMessageType([NotNull] CaplParser.MostAmsMessageTypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.diagRequestType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDiagRequestType([NotNull] CaplParser.DiagRequestTypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.diagRequestType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDiagRequestType([NotNull] CaplParser.DiagRequestTypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.diagResponseType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDiagResponseType([NotNull] CaplParser.DiagResponseTypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.diagResponseType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDiagResponseType([NotNull] CaplParser.DiagResponseTypeContext context);
+	void ExitDiagType([NotNull] CaplParser.DiagTypeContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.signalType"/>.
 	/// </summary>
@@ -1102,25 +1012,15 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSysvarUpdateType([NotNull] CaplParser.SysvarUpdateTypeContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.ethernetPacketType"/>.
+	/// Enter a parse tree produced by <see cref="CaplParser.ethernetType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterEthernetPacketType([NotNull] CaplParser.EthernetPacketTypeContext context);
+	void EnterEthernetType([NotNull] CaplParser.EthernetTypeContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.ethernetPacketType"/>.
+	/// Exit a parse tree produced by <see cref="CaplParser.ethernetType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitEthernetPacketType([NotNull] CaplParser.EthernetPacketTypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.ethernetStatusType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEthernetStatusType([NotNull] CaplParser.EthernetStatusTypeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.ethernetStatusType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEthernetStatusType([NotNull] CaplParser.EthernetStatusTypeContext context);
+	void ExitEthernetType([NotNull] CaplParser.EthernetTypeContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.keyEventType"/>.
 	/// </summary>

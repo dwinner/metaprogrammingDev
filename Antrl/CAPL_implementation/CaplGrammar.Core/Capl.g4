@@ -32,17 +32,12 @@ primaryExpression:
 		| preStopSection
 		| messageSection
 		| onAnySection
-		| multiplexedMessageSection
-		| mostMessageSection
 		| stopMeasurementSection
-		| diagRequestSection
-		| diagResponseSection
+		| diagSection
 		| signalSection
 		| sysvarSection
 		| sysvarUpdateSection
-		| ethernetPacketSection
-		| ethernetStatusSection
-		| mostAmsMessageSection
+		| ethernetSection
 		| externalDeclaration
 	)+;
 
@@ -108,20 +103,8 @@ onAnySection
     : On Identifier LeftBrace blockItemList? RightBrace
     ;
 
-multiplexedMessageSection
-    : On multiplexedMessageType LeftBrace blockItemList? RightBrace
-    ;
-
-mostMessageSection
-    : On mostMessageType LeftBrace blockItemList? RightBrace
-    ;
-
-diagRequestSection
-    : On diagRequestType LeftBrace blockItemList? RightBrace
-    ;
-
-diagResponseSection
-    : On diagResponseType LeftBrace blockItemList? RightBrace
+diagSection
+    : On diagType LeftBrace blockItemList? RightBrace
     ;
 
 signalSection
@@ -137,16 +120,8 @@ sysvarUpdateSection
     : On SysvarUpdate sysvarUpdateType LeftBrace blockItemList? RightBrace
     ;
 
-ethernetPacketSection
-    : On ethernetPacketType LeftBrace blockItemList? RightBrace
-    ;
-
-ethernetStatusSection
-    : On ethernetStatusType LeftBrace blockItemList? RightBrace
-    ;
-
-mostAmsMessageSection
-    : On mostAmsMessageType LeftBrace blockItemList? RightBrace
+ethernetSection
+    : On ethernetType LeftBrace blockItemList? RightBrace
     ;
 
 stopMeasurementSection
@@ -285,15 +260,9 @@ typeSpecifier: (
 		| structSpecifier And?
 		| enumSpecifier And?
 		| messageType
-		| multiplexedMessageType
-		| mostAmsMessageType
-		| mostMessageType
-		| diagRequestType
-		| diagResponseType
+		| diagType
 		| signalType
-		| ethernetPacketType
-		| ethernetStatusType
-	);
+		| ethernetType);
 
 structSpecifier
     : (Align0
@@ -489,79 +458,30 @@ timerType: Timer Identifier (Dot (Identifier | Star))?;
 Timer: [Tt][iI][mM][eE][rR];
 
 messageType
-    : Message
-    (
-        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
+    : (Message
+        | MultiplexedMessage
+        | MostMessage
+        | MostAmsMessage)
+    (Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
         | Star
         | Constant
         | Identifier (Minus | DoubleColon)? Identifier
         | MessageHexConst (Minus MessageHexConst)?
         | Constant (Minus Constant)?
-        | Identifier Minus Whitespace? Constant
-    )
+        | Identifier Minus Whitespace? Constant)
 	;
 Message: [mM][eE][sS][sS][aA][gG][eE];
-
-multiplexedMessageType
-    : MultiplexedMessage
-    (
-        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-        | Star
-        | Constant
-        | Identifier (Minus | DoubleColon)? Identifier
-        | MessageHexConst (Minus MessageHexConst)?
-        | Constant (Minus Constant)?
-        | Identifier Minus Whitespace? Constant
-    )
-    ;
 MultiplexedMessage: [mM][uU][lL][tT][iI][pP][lL][eE][xX][eE][dD][_][mM][eE][sS][sS][aA][gG][eE];
 
-mostMessageType
-    : MostMessage
-    (
-        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-        | Star
-        | Constant
-        | Identifier (Minus | DoubleColon)? Identifier
-        | MessageHexConst (Minus MessageHexConst)?
-        | Constant (Minus Constant)?
-        | Identifier Minus Whitespace? Constant
-    )
-    ;
-
-mostAmsMessageType
-    : MostAmsMessage
-    (
-        Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-        | Star
-        | Constant
-        | Identifier (Minus | DoubleColon)? Identifier
-        | MessageHexConst (Minus MessageHexConst)?
-        | Constant (Minus Constant)?
-        | Identifier Minus Whitespace? Constant
-    )
-    ;
-
-diagRequestType:
-	DiagRequest
-	(
-	    Identifier ((Dot | DoubleColon) (Identifier | Star))?
+diagType
+    : (DiagRequest
+        | DiagResponse)
+	(Identifier ((Dot | DoubleColon) (Identifier | Star))?
 	    | Star
 	    | Constant
-	    | Identifier Minus Identifier
-	)
+	    | Identifier Minus Identifier)
 	;
 DiagRequest: [dD][iI][aA][gG][rR][eE][qQ][uU][eE][sS][tT];
-
-diagResponseType:
-	DiagResponse
-	(
-	    Identifier ((Dot | DoubleColon) (Identifier | Star))?
-	    | Star
-	    | Constant
-	    | Identifier Minus Identifier
-	)
-	;
 DiagResponse: [dD][iI][aA][gG][rR][eE][sS][pP][oO][nN][sS][eE];
 
 signalType
@@ -585,24 +505,13 @@ sysvarUpdateType
        Identifier (DoubleColon Identifier)*
     ;
 
-ethernetPacketType
-    : EthernetPacket
-    (
-        Identifier (Dot (Identifier | Star))?
+ethernetType
+    : (EthernetPacket
+        | EthernetStatus)
+    (Identifier (Dot (Identifier | Star))?
         | Star
         | Constant
-        | Identifier (Minus | DoubleColon)? Identifier
-    )
-    ;
-
-ethernetStatusType
-    : EthernetStatus
-    (
-        Identifier (Dot (Identifier | Star))?
-        | Star
-        | Constant
-        | Identifier (Minus | DoubleColon)? Identifier
-    )
+        | Identifier (Minus | DoubleColon)? Identifier)
     ;
 
 keyEventType: Key (Constant | KeyConstants | Star);

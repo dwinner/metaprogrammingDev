@@ -123,29 +123,11 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitOnAnySection([NotNull] CaplParser.OnAnySectionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.multiplexedMessageSection"/>.
+	/// Visit a parse tree produced by <see cref="CaplParser.diagSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitMultiplexedMessageSection([NotNull] CaplParser.MultiplexedMessageSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.mostMessageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMostMessageSection([NotNull] CaplParser.MostMessageSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.diagRequestSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDiagRequestSection([NotNull] CaplParser.DiagRequestSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.diagResponseSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDiagResponseSection([NotNull] CaplParser.DiagResponseSectionContext context);
+	Result VisitDiagSection([NotNull] CaplParser.DiagSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.signalSection"/>.
 	/// </summary>
@@ -165,23 +147,11 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.ethernetPacketSection"/>.
+	/// Visit a parse tree produced by <see cref="CaplParser.ethernetSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitEthernetPacketSection([NotNull] CaplParser.EthernetPacketSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.ethernetStatusSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitEthernetStatusSection([NotNull] CaplParser.EthernetStatusSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.mostAmsMessageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMostAmsMessageSection([NotNull] CaplParser.MostAmsMessageSectionContext context);
+	Result VisitEthernetSection([NotNull] CaplParser.EthernetSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.stopMeasurementSection"/>.
 	/// </summary>
@@ -627,35 +597,11 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitMessageType([NotNull] CaplParser.MessageTypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.multiplexedMessageType"/>.
+	/// Visit a parse tree produced by <see cref="CaplParser.diagType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitMultiplexedMessageType([NotNull] CaplParser.MultiplexedMessageTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.mostMessageType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMostMessageType([NotNull] CaplParser.MostMessageTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.mostAmsMessageType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMostAmsMessageType([NotNull] CaplParser.MostAmsMessageTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.diagRequestType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDiagRequestType([NotNull] CaplParser.DiagRequestTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.diagResponseType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDiagResponseType([NotNull] CaplParser.DiagResponseTypeContext context);
+	Result VisitDiagType([NotNull] CaplParser.DiagTypeContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.signalType"/>.
 	/// </summary>
@@ -675,17 +621,11 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitSysvarUpdateType([NotNull] CaplParser.SysvarUpdateTypeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.ethernetPacketType"/>.
+	/// Visit a parse tree produced by <see cref="CaplParser.ethernetType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitEthernetPacketType([NotNull] CaplParser.EthernetPacketTypeContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.ethernetStatusType"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitEthernetStatusType([NotNull] CaplParser.EthernetStatusTypeContext context);
+	Result VisitEthernetType([NotNull] CaplParser.EthernetTypeContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.keyEventType"/>.
 	/// </summary>
