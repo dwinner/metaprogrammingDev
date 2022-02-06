@@ -5,65 +5,49 @@
 grammar Capl;
 
 // The root parser node
-primaryExpression:
-	Identifier
+primaryExpression
+    : Identifier
 	| AccessToSignalIdentifier
 	| SysvarIdentifier
 	| Constant
 	| StringLiteral+
 	| LeftParen expression RightParen
 	| LeftParen compoundStatement RightParen
-	| (
-		includeSection
+	| (includeSection
 		| variableSection
 		| keyEventSection
 		| timerSection
-		| errorFrameSection
-		| errorActiveSection
-		| errorPassiveSection
 		| envSection
 		| functionDefinition
 		| enumSpecifier
 		| structSpecifier
-		| startSection
-		| busOnSection
-		| busOffSection
-		| preStartSection
-		| preStopSection
+		| caplTypelessSection
 		| messageSection
-		| onAnySection
-		| stopMeasurementSection
 		| diagSection
 		| signalSection
 		| sysvarSection
 		| sysvarUpdateSection
 		| ethernetSection
-		| externalDeclaration
-	)+;
+		| externalDeclaration)+;
 
 /* Top CAPL's sections */
 includeSection
     : Includes LeftBrace IncludeDirective* RightBrace
     ;
 
-startSection
-    : On Start LeftBrace blockItemList? RightBrace
-    ;
-
-busOnSection
-    : On BusOn LeftBrace blockItemList? RightBrace
-    ;
-
-busOffSection
-    : On BusOff LeftBrace blockItemList? RightBrace
-    ;
-
-preStartSection
-    : On PreStart LeftBrace blockItemList? RightBrace
-    ;
-
-preStopSection
-    : On PreStop LeftBrace blockItemList? RightBrace
+caplTypelessSection
+    : On (
+        Start
+        | PreStart
+        | PreStop
+        | BusOn
+        | BusOff
+        | ErrorFrame
+        | ErrorActive
+        | ErrorPassive
+        | StopMeasurement
+        | Identifier
+      ) LeftBrace blockItemList? RightBrace
     ;
 
 variableSection
@@ -83,24 +67,8 @@ timerSection:
 		) RightParen
 	)? LeftBrace blockItemList? RightBrace;
 
-errorFrameSection
-    : On ErrorFrame LeftBrace blockItemList? RightBrace
-    ;
-
-errorActiveSection
-    : On ErrorActive LeftBrace blockItemList? RightBrace
-    ;
-
-errorPassiveSection
-    : On ErrorPassive LeftBrace blockItemList? RightBrace
-    ;
-
 messageSection
     : On messageType LeftBrace blockItemList? RightBrace
-    ;
-
-onAnySection
-    : On Identifier LeftBrace blockItemList? RightBrace
     ;
 
 diagSection
@@ -122,10 +90,6 @@ sysvarUpdateSection
 
 ethernetSection
     : On ethernetType LeftBrace blockItemList? RightBrace
-    ;
-
-stopMeasurementSection
-    : On StopMeasurement LeftBrace blockItemList? RightBrace
     ;
 
 envSection

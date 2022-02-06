@@ -45,35 +45,11 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitIncludeSection([NotNull] CaplParser.IncludeSectionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.startSection"/>.
+	/// Visit a parse tree produced by <see cref="CaplParser.caplTypelessSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitStartSection([NotNull] CaplParser.StartSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.busOnSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBusOnSection([NotNull] CaplParser.BusOnSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.busOffSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitBusOffSection([NotNull] CaplParser.BusOffSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.preStartSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitPreStartSection([NotNull] CaplParser.PreStartSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.preStopSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitPreStopSection([NotNull] CaplParser.PreStopSectionContext context);
+	Result VisitCaplTypelessSection([NotNull] CaplParser.CaplTypelessSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.variableSection"/>.
 	/// </summary>
@@ -93,35 +69,11 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitTimerSection([NotNull] CaplParser.TimerSectionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.errorFrameSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitErrorFrameSection([NotNull] CaplParser.ErrorFrameSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.errorActiveSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitErrorActiveSection([NotNull] CaplParser.ErrorActiveSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.errorPassiveSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitErrorPassiveSection([NotNull] CaplParser.ErrorPassiveSectionContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.messageSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitMessageSection([NotNull] CaplParser.MessageSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.onAnySection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitOnAnySection([NotNull] CaplParser.OnAnySectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.diagSection"/>.
 	/// </summary>
@@ -152,12 +104,6 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitEthernetSection([NotNull] CaplParser.EthernetSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.stopMeasurementSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitStopMeasurementSection([NotNull] CaplParser.StopMeasurementSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.envSection"/>.
 	/// </summary>
