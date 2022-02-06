@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:/Projects/metaproDev/Antrl/CAPL_implementation/CaplGrammar.Core\Capl.g4 by ANTLR 4.9.2
+// Generated from D:/Projects/metaproDev/Antrl/CAPL_implementation/CaplGrammar\Capl.g4 by ANTLR 4.9.2
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -73,6 +73,18 @@ public partial class CaplBaseListener : ICaplListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitCaplTypelessSection([NotNull] CaplParser.CaplTypelessSectionContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.caplTypeSection"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCaplTypeSection([NotNull] CaplParser.CaplTypeSectionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.caplTypeSection"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCaplTypeSection([NotNull] CaplParser.CaplTypeSectionContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.variableSection"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -85,18 +97,6 @@ public partial class CaplBaseListener : ICaplListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitVariableSection([NotNull] CaplParser.VariableSectionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.keyEventSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterKeyEventSection([NotNull] CaplParser.KeyEventSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.keyEventSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitKeyEventSection([NotNull] CaplParser.KeyEventSectionContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.timerSection"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -108,42 +108,6 @@ public partial class CaplBaseListener : ICaplListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitTimerSection([NotNull] CaplParser.TimerSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.messageSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterMessageSection([NotNull] CaplParser.MessageSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.messageSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitMessageSection([NotNull] CaplParser.MessageSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.diagSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDiagSection([NotNull] CaplParser.DiagSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.diagSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDiagSection([NotNull] CaplParser.DiagSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.signalSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSignalSection([NotNull] CaplParser.SignalSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.signalSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSignalSection([NotNull] CaplParser.SignalSectionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -168,18 +132,6 @@ public partial class CaplBaseListener : ICaplListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.ethernetSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterEthernetSection([NotNull] CaplParser.EthernetSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.ethernetSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitEthernetSection([NotNull] CaplParser.EthernetSectionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.envSection"/>.
 	/// <para>The default implementation does nothing.</para>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:/Projects/metaproDev/Antrl/CAPL_implementation/CaplGrammar.Core\Capl.g4 by ANTLR 4.9.2
+// Generated from D:/Projects/metaproDev/Antrl/CAPL_implementation/CaplGrammar\Capl.g4 by ANTLR 4.9.2
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -51,41 +51,23 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitCaplTypelessSection([NotNull] CaplParser.CaplTypelessSectionContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CaplParser.caplTypeSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCaplTypeSection([NotNull] CaplParser.CaplTypeSectionContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.variableSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitVariableSection([NotNull] CaplParser.VariableSectionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.keyEventSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitKeyEventSection([NotNull] CaplParser.KeyEventSectionContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.timerSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitTimerSection([NotNull] CaplParser.TimerSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.messageSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitMessageSection([NotNull] CaplParser.MessageSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.diagSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDiagSection([NotNull] CaplParser.DiagSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.signalSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSignalSection([NotNull] CaplParser.SignalSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
 	/// </summary>
@@ -98,12 +80,6 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.ethernetSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitEthernetSection([NotNull] CaplParser.EthernetSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.envSection"/>.
 	/// </summary>

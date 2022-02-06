@@ -15,19 +15,15 @@ primaryExpression
 	| LeftParen compoundStatement RightParen
 	| (includeSection
 		| variableSection
-		| keyEventSection
 		| timerSection
 		| envSection
 		| functionDefinition
 		| enumSpecifier
 		| structSpecifier
 		| caplTypelessSection
-		| messageSection
-		| diagSection
-		| signalSection
+		| caplTypeSection
 		| sysvarSection
 		| sysvarUpdateSection
-		| ethernetSection
 		| externalDeclaration)+;
 
 /* Top CAPL's sections */
@@ -50,12 +46,18 @@ caplTypelessSection
       ) LeftBrace blockItemList? RightBrace
     ;
 
-variableSection
-    : Variables LeftBrace blockItemList? RightBrace
+caplTypeSection
+    : On (
+        keyEventType
+        | messageType
+        | diagType
+        | signalType
+        | ethernetType
+    ) LeftBrace blockItemList? RightBrace
     ;
 
-keyEventSection
-    : On keyEventType LeftBrace blockItemList? RightBrace
+variableSection
+    : Variables LeftBrace blockItemList? RightBrace
     ;
 
 timerSection:
@@ -67,18 +69,6 @@ timerSection:
 		) RightParen
 	)? LeftBrace blockItemList? RightBrace;
 
-messageSection
-    : On messageType LeftBrace blockItemList? RightBrace
-    ;
-
-diagSection
-    : On diagType LeftBrace blockItemList? RightBrace
-    ;
-
-signalSection
-    : On signalType LeftBrace blockItemList? RightBrace
-    ;
-
 sysvarSection
     : On Sysvar2 sysvarType LeftBrace blockItemList? RightBrace
     ;
@@ -86,10 +76,6 @@ Sysvar2: [sS][yY][sS][vV][aA][rR];  // #SPIKE
 
 sysvarUpdateSection
     : On SysvarUpdate sysvarUpdateType LeftBrace blockItemList? RightBrace
-    ;
-
-ethernetSection
-    : On ethernetType LeftBrace blockItemList? RightBrace
     ;
 
 envSection
