@@ -52,6 +52,16 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitIncludeSection([NotNull] CaplParser.IncludeSectionContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.variableSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterVariableSection([NotNull] CaplParser.VariableSectionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.variableSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitVariableSection([NotNull] CaplParser.VariableSectionContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.caplTypelessSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -71,56 +81,6 @@ public interface ICaplListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitCaplTypeSection([NotNull] CaplParser.CaplTypeSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.variableSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterVariableSection([NotNull] CaplParser.VariableSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.variableSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitVariableSection([NotNull] CaplParser.VariableSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.timerSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterTimerSection([NotNull] CaplParser.TimerSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.timerSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitTimerSection([NotNull] CaplParser.TimerSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSysvarSection([NotNull] CaplParser.SysvarSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSysvarSection([NotNull] CaplParser.SysvarSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.sysvarUpdateSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.sysvarUpdateSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.envSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEnvSection([NotNull] CaplParser.EnvSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.envSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEnvSection([NotNull] CaplParser.EnvSectionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.postfixExpression"/>.
 	/// </summary>

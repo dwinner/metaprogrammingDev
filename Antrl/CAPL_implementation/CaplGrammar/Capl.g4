@@ -5,83 +5,63 @@
 grammar Capl;
 
 // The root parser node
-primaryExpression
-    : Identifier
+primaryExpression:
+	Identifier
 	| AccessToSignalIdentifier
 	| SysvarIdentifier
 	| Constant
 	| StringLiteral+
 	| LeftParen expression RightParen
 	| LeftParen compoundStatement RightParen
-	| (includeSection
+	| (
+		includeSection
 		| variableSection
-		| timerSection
-		| envSection
 		| functionDefinition
 		| enumSpecifier
 		| structSpecifier
 		| caplTypelessSection
 		| caplTypeSection
-		| sysvarSection
-		| sysvarUpdateSection
-		| externalDeclaration)+;
+		| externalDeclaration
+	)+;
 
 /* Top CAPL's sections */
-includeSection
-    : Includes LeftBrace IncludeDirective* RightBrace
-    ;
+includeSection: Includes LeftBrace IncludeDirective* RightBrace;
 
-caplTypelessSection
-    : On (
-        Start
-        | PreStart
-        | PreStop
-        | BusOn
-        | BusOff
-        | ErrorFrame
-        | ErrorActive
-        | ErrorPassive
-        | StopMeasurement
-        | Identifier
-      ) LeftBrace blockItemList? RightBrace
-    ;
+variableSection: Variables LeftBrace blockItemList? RightBrace;
 
-caplTypeSection
-    : On (
-        keyEventType
-        | messageType
-        | diagType
-        | signalType
-        | ethernetType
-    ) LeftBrace blockItemList? RightBrace
-    ;
+caplTypelessSection:
+	On (
+		Start
+		| PreStart
+		| PreStop
+		| BusOn
+		| BusOff
+		| ErrorFrame
+		| ErrorActive
+		| ErrorPassive
+		| StopMeasurement
+		| Identifier
+	) LeftBrace blockItemList? RightBrace;
 
-variableSection
-    : Variables LeftBrace blockItemList? RightBrace
-    ;
-
-timerSection:
-	On timerType (
-		LeftParen (
-			typeQualifier? typeSpecifier Identifier (
-				Comma typeQualifier? typeSpecifier Identifier
-			)*
-		) RightParen
-	)? LeftBrace blockItemList? RightBrace;
-
-sysvarSection
-    : On Sysvar2 sysvarType LeftBrace blockItemList? RightBrace
-    ;
-Sysvar2: [sS][yY][sS][vV][aA][rR];  // #SPIKE
-
-sysvarUpdateSection
-    : On SysvarUpdate sysvarUpdateType LeftBrace blockItemList? RightBrace
-    ;
-
-envSection
-    : On EnvVar Identifier LeftBrace blockItemList? RightBrace
-	| On EnvVar LeftParen Identifier RightParen LeftBrace blockItemList? RightBrace
-	;
+caplTypeSection:
+	On (
+		keyEventType
+		| messageType
+		| diagType
+		| signalType
+		| ethernetType
+		| timerType (
+			LeftParen (
+				typeQualifier? typeSpecifier Identifier (
+					Comma typeQualifier? typeSpecifier Identifier
+				)*
+			) RightParen
+		)?
+		| Sysvar2 sysvarType
+		| SysvarUpdate sysvarUpdateType
+		| EnvVar (Identifier | LeftParen Identifier RightParen)
+	) LeftBrace blockItemList? RightBrace;
+Sysvar2: [sS][yY][sS][vV][aA][rR]; // #SPIKE
 
 /* Parser's syntax rules */
 postfixExpression: (
@@ -94,7 +74,8 @@ postfixExpression: (
 		| (PlusPlus | MinusMinus)
 	)*;
 
-argumentExpressionList: assignmentExpression (Comma assignmentExpression)*;
+argumentExpressionList:
+	assignmentExpression (Comma assignmentExpression)*;
 
 unaryExpression: (PlusPlus | MinusMinus)* (
 		postfixExpression
@@ -106,10 +87,10 @@ unaryOperator: Plus | Minus | Tilde | Not;
 castExpression:
 	LeftParen typeName RightParen castExpression
 	| unaryExpression
-	| DigitSequence
-	;
+	| DigitSequence;
 
-multiplicativeExpression: castExpression ((Star | Div | Mod) castExpression)*;
+multiplicativeExpression:
+	castExpression ((Star | Div | Mod) castExpression)*;
 
 additiveExpression:
 	multiplicativeExpression (
@@ -135,25 +116,27 @@ andExpression: equalityExpression ( And equalityExpression)*;
 
 exclusiveOrExpression: andExpression (Caret andExpression)*;
 
-inclusiveOrExpression: exclusiveOrExpression (Or exclusiveOrExpression)*;
+inclusiveOrExpression:
+	exclusiveOrExpression (Or exclusiveOrExpression)*;
 
-logicalAndExpression: inclusiveOrExpression (AndAnd inclusiveOrExpression)*;
+logicalAndExpression:
+	inclusiveOrExpression (AndAnd inclusiveOrExpression)*;
 
-logicalOrExpression: logicalAndExpression (OrOr logicalAndExpression)*;
+logicalOrExpression:
+	logicalAndExpression (OrOr logicalAndExpression)*;
 
 conditionalExpression:
 	logicalOrExpression (
 		Question expression Colon conditionalExpression
 	)?;
 
-assignmentExpression
-    : conditionalExpression
+assignmentExpression:
+	conditionalExpression
 	| unaryExpression assignmentOperator assignmentExpression
-	| DigitSequence
-	;
+	| DigitSequence;
 
-assignmentOperator
-    : Assign
+assignmentOperator:
+	Assign
 	| StarAssign
 	| DivAssign
 	| ModAssign
@@ -163,8 +146,7 @@ assignmentOperator
 	| RightShiftAssign
 	| AndAssign
 	| XorAssign
-	| OrAssign
-	;
+	| OrAssign;
 
 expression: assignmentExpression (Comma assignmentExpression)*;
 
@@ -178,16 +160,12 @@ declarationSpecifiers2: declarationSpecifier+;
 
 typeQualifier: Const;
 
-functionSpecifier
-    : (Testfunction)
-    | ((Export)? Testcase)
-    ;
+functionSpecifier: (Testfunction) | ((Export)? Testcase);
 
-declarationSpecifier
-    : typeSpecifier
+declarationSpecifier:
+	typeSpecifier
 	| typeQualifier
-	| functionSpecifier
-	;
+	| functionSpecifier;
 
 initDeclaratorList: initDeclarator (Comma initDeclarator)*;
 
@@ -212,11 +190,12 @@ typeSpecifier: (
 		| messageType
 		| diagType
 		| signalType
-		| ethernetType);
+		| ethernetType
+	);
 
-structSpecifier
-    : (Align0
-	    | Align1
+structSpecifier: (
+		Align0
+		| Align1
 		| Align2
 		| Align3
 		| Align4
@@ -224,32 +203,35 @@ structSpecifier
 		| Align6
 		| Align7
 		| Align8
-	)? (structure Identifier? LeftBrace structDeclarationList RightBrace
-	    | structure Identifier);
+	)? (
+		structure Identifier? LeftBrace structDeclarationList RightBrace
+		| structure Identifier
+	);
 
 structure: Struct;
 
 structDeclarationList: structDeclaration+;
 
-structDeclaration: specifierQualifierList structDeclaratorList? Semi;
+structDeclaration:
+	specifierQualifierList structDeclaratorList? Semi;
 
 specifierQualifierList: (typeSpecifier | typeQualifier) specifierQualifierList?;
 
-structDeclaratorList: structDeclarator (Comma structDeclarator)*;
+structDeclaratorList:
+	structDeclarator (Comma structDeclarator)*;
 
-structDeclarator
-    : declarator
+structDeclarator:
+	declarator
 	| declarator? Colon constantExpression;
 
 declarator: directDeclarator;
 
-directDeclarator
-    : Identifier
+directDeclarator:
+	Identifier
 	| LeftParen declarator RightParen
 	| directDeclarator LeftBracket assignmentExpression? RightBracket
 	| directDeclarator LeftParen parameterTypeList RightParen
-	| directDeclarator LeftParen identifierList? RightParen
-	;
+	| directDeclarator LeftParen identifierList? RightParen;
 
 nestedParenthesesBlock: (
 		~(LeftParen | RightParen)
@@ -258,10 +240,11 @@ nestedParenthesesBlock: (
 
 parameterTypeList: parameterList (Comma Ellipsis)?;
 
-parameterList: parameterDeclaration (Comma parameterDeclaration)*;
+parameterList:
+	parameterDeclaration (Comma parameterDeclaration)*;
 
-parameterDeclaration
-    : declarationSpecifiers declarator
+parameterDeclaration:
+	declarationSpecifiers declarator
 	| declarationSpecifiers2 abstractDeclarator?;
 
 identifierList: Identifier (Comma Identifier)*;
@@ -270,21 +253,21 @@ typeName: specifierQualifierList abstractDeclarator?;
 
 abstractDeclarator: directAbstractDeclarator;
 
-directAbstractDeclarator
-    : LeftParen abstractDeclarator RightParen
+directAbstractDeclarator:
+	LeftParen abstractDeclarator RightParen
 	| LeftBracket assignmentExpression? RightBracket
 	| LeftBracket Star RightBracket
 	| LeftParen parameterTypeList? RightParen
 	| directAbstractDeclarator LeftBracket assignmentExpression? RightBracket
 	| directAbstractDeclarator LeftBracket Star RightBracket
-	| directAbstractDeclarator LeftParen parameterTypeList? RightParen
-	;
+	| directAbstractDeclarator LeftParen parameterTypeList? RightParen;
 
-initializer
-    : assignmentExpression
+initializer:
+	assignmentExpression
 	| LeftBrace initializerList Comma? RightBrace;
 
-initializerList: designation? initializer (Comma designation? initializer)*;
+initializerList:
+	designation? initializer (Comma designation? initializer)*;
 
 designation: designatorList Assign;
 
@@ -292,16 +275,16 @@ designatorList: designator+;
 
 designator: LeftBracket constantExpression RightBracket;
 
-statement
-    : labeledStatement
+statement:
+	labeledStatement
 	| compoundStatement
 	| expressionStatement
 	| selectionStatement
 	| iterationStatement
 	| jumpStatement;
 
-labeledStatement
-    : Identifier Colon statement
+labeledStatement:
+	Identifier Colon statement
 	| Case (constantExpression | KeyConstants) Colon statement
 	| Default Colon statement;
 
@@ -313,32 +296,28 @@ blockItem: statement | declaration;
 
 expressionStatement: expression? Semi;
 
-selectionStatement
-    : If LeftParen expression RightParen statement (Else statement)?
-	| Switch LeftParen expression RightParen statement
-	;
+selectionStatement:
+	If LeftParen expression RightParen statement (Else statement)?
+	| Switch LeftParen expression RightParen statement;
 
-iterationStatement
-    : While LeftParen expression RightParen statement
+iterationStatement:
+	While LeftParen expression RightParen statement
 	| Do statement While LeftParen expression RightParen Semi
-	| For LeftParen forCondition RightParen statement
-	;
+	| For LeftParen forCondition RightParen statement;
 
 forCondition: (forDeclaration | expression?) Semi forExpression? Semi forExpression?;
 
 forDeclaration: declarationSpecifiers initDeclaratorList?;
 
-forExpression: assignmentExpression (Comma assignmentExpression)*;
+forExpression:
+	assignmentExpression (Comma assignmentExpression)*;
 
 jumpStatement: ((Continue | Break) | Return expression?) Semi;
 
-externalDeclaration
-    : functionDefinition
-    | declaration
-    | Semi
-    ;
+externalDeclaration: functionDefinition | declaration | Semi;
 
-functionDefinition: declarationSpecifiers? declarator declarationList? compoundStatement;
+functionDefinition:
+	declarationSpecifiers? declarator declarationList? compoundStatement;
 
 declarationList: declaration+;
 
@@ -347,23 +326,32 @@ declarationList: declaration+;
 // Keywords
 Export: [eE][xX][pP][oO][rR][tT];
 Testcase: [tT][eE][sS][tT][cC][aA][sS][eE];
-Testfunction: [tT][eE][sS][tT][fF][uU][nN][cC][tT][iI][oO][nN];
+Testfunction:
+	[tT][eE][sS][tT][fF][uU][nN][cC][tT][iI][oO][nN];
 Includes: [iI][nN][cC][lL][uU][dD][eE][sS];
 Const: [cC][oO][nN][sS][tT];
-StopMeasurement: [sS][tT][oO][pP][mM][eE][aA][sS][uU][rR][eE][mM][eE][nN][tT];
-SysvarUpdate: [sS][yY][sS][vV][aA][rR][_][uU][pP][dD][aA][tT][eE];
-EthernetPacket: [eE][tT][hH][eE][rR][nN][eE][tT][pP][aA][cC][kK][eE][tT];
-EthernetStatus: [eE][tT][hH][eE][rR][nN][eE][tT][sS][tT][aA][tT][uU][sS];
-MostAmsMessage: [mM][oO][sS][tT][aA][mM][sS][mM][eE][sS][sS][aA][gG][eE];
-MostMessage: [mM][oO][sS][tT][mM][eE][sS][sS][aA][gG][eE];
+StopMeasurement:
+	[sS][tT][oO][pP][mM][eE][aA][sS][uU][rR][eE][mM][eE][nN][tT];
+SysvarUpdate:
+	[sS][yY][sS][vV][aA][rR][_][uU][pP][dD][aA][tT][eE];
+EthernetPacket:
+	[eE][tT][hH][eE][rR][nN][eE][tT][pP][aA][cC][kK][eE][tT];
+EthernetStatus:
+	[eE][tT][hH][eE][rR][nN][eE][tT][sS][tT][aA][tT][uU][sS];
+MostAmsMessage:
+	[mM][oO][sS][tT][aA][mM][sS][mM][eE][sS][sS][aA][gG][eE];
+MostMessage:
+	[mM][oO][sS][tT][mM][eE][sS][sS][aA][gG][eE];
 Start: [sS][tT][aA][rR][tT];
 BusOn: [bB][uU][sS][oO][nN];
 BusOff: [bB][uU][sS][oO][fF][fF];
 PreStart: [pP][rR][eE][sS][tT][aA][rR][tT];
 PreStop: [pP][rR][eE][sS][tT][oO][pP];
 ErrorFrame: [eE][rR][rR][oO][rR][fF][rR][aA][mM][eE];
-ErrorActive: [eE][rR][rR][oO][rR][aA][cC][tT][iI][vV][eE];
-ErrorPassive: [eE][rR][rR][oO][rR][pP][aA][sS][sS][iI][vV][eE];
+ErrorActive:
+	[eE][rR][rR][oO][rR][aA][cC][tT][iI][vV][eE];
+ErrorPassive:
+	[eE][rR][rR][oO][rR][pP][aA][sS][sS][iI][vV][eE];
 On: [oO][nN];
 Variables: [vV][aA][rR][iI][aA][bB][lL][eE][sS];
 Break: [bB][rR][eE][aA][kK];
@@ -392,10 +380,9 @@ Void: [vV][oO][iI][dD];
 While: [wW][hH][iI][lL][eE];
 Struct: [sS][tT][rR][uU][cC][tT];
 
-enumSpecifier
-    : Enum Identifier? LeftBrace enumeratorList Comma? RightBrace Semi?
-	| Enum Identifier
-	;
+enumSpecifier:
+	Enum Identifier? LeftBrace enumeratorList Comma? RightBrace Semi?
+	| Enum Identifier;
 Enum: [eE][nN][uU][mM];
 
 enumeratorList: enumerator (Comma enumerator)*;
@@ -407,62 +394,60 @@ enumerationConstant: Identifier;
 timerType: Timer Identifier (Dot (Identifier | Star))?;
 Timer: [Tt][iI][mM][eE][rR];
 
-messageType
-    : (Message
-        | MultiplexedMessage
-        | MostMessage
-        | MostAmsMessage)
-    (Identifier (Dot (Identifier | Star))? (Comma Identifier (Dot (Identifier | Star))?)*
-        | Star
-        | Constant
-        | Identifier (Minus | DoubleColon)? Identifier
-        | MessageHexConst (Minus MessageHexConst)?
-        | Constant (Minus Constant)?
-        | Identifier Minus Whitespace? Constant)
-	;
+messageType: (
+		Message
+		| MultiplexedMessage
+		| MostMessage
+		| MostAmsMessage
+	) (
+		Identifier (Dot (Identifier | Star))? (
+			Comma Identifier (Dot (Identifier | Star))?
+		)*
+		| Star
+		| Constant
+		| Identifier (Minus | DoubleColon)? Identifier
+		| MessageHexConst (Minus MessageHexConst)?
+		| Constant (Minus Constant)?
+		| Identifier Minus Whitespace? Constant
+	);
 Message: [mM][eE][sS][sS][aA][gG][eE];
-MultiplexedMessage: [mM][uU][lL][tT][iI][pP][lL][eE][xX][eE][dD][_][mM][eE][sS][sS][aA][gG][eE];
+MultiplexedMessage:
+	[mM][uU][lL][tT][iI][pP][lL][eE][xX][eE][dD][_][mM][eE][sS][sS][aA][gG][eE];
 
-diagType
-    : (DiagRequest
-        | DiagResponse)
-	(Identifier ((Dot | DoubleColon) (Identifier | Star))?
-	    | Star
-	    | Constant
-	    | Identifier Minus Identifier)
-	;
-DiagRequest: [dD][iI][aA][gG][rR][eE][qQ][uU][eE][sS][tT];
-DiagResponse: [dD][iI][aA][gG][rR][eE][sS][pP][oO][nN][sS][eE];
+diagType: (DiagRequest | DiagResponse) (
+		Identifier ((Dot | DoubleColon) (Identifier | Star))?
+		| Star
+		| Constant
+		| Identifier Minus Identifier
+	);
+DiagRequest:
+	[dD][iI][aA][gG][rR][eE][qQ][uU][eE][sS][tT];
+DiagResponse:
+	[dD][iI][aA][gG][rR][eE][sS][pP][oO][nN][sS][eE];
 
-signalType
-    : Signal
-    (
-        Identifier ((Dot | DoubleColon) (Identifier | Star))?
-        | Star
-        | Constant
-        | Identifier Minus Identifier
-    )
-    ;
+signalType:
+	Signal (
+		Identifier ((Dot | DoubleColon) (Identifier | Star))?
+		| Star
+		| Constant
+		| Identifier Minus Identifier
+	);
 Signal: [sS][iI][gG][nN][aA][lL];
 
-sysvarType
-    : (Sysvar DoubleColon)?
-       Identifier (DoubleColon Identifier)*
-    ;
+sysvarType: (Sysvar DoubleColon)? Identifier (
+		DoubleColon Identifier
+	)*;
 
-sysvarUpdateType
-    : (Sysvar Whitespace? DoubleColon)?
-       Identifier (DoubleColon Identifier)*
-    ;
+sysvarUpdateType: (Sysvar Whitespace? DoubleColon)? Identifier (
+		DoubleColon Identifier
+	)*;
 
-ethernetType
-    : (EthernetPacket
-        | EthernetStatus)
-    (Identifier (Dot (Identifier | Star))?
-        | Star
-        | Constant
-        | Identifier (Minus | DoubleColon)? Identifier)
-    ;
+ethernetType: (EthernetPacket | EthernetStatus) (
+		Identifier (Dot (Identifier | Star))?
+		| Star
+		| Constant
+		| Identifier (Minus | DoubleColon)? Identifier
+	);
 
 keyEventType: Key (Constant | KeyConstants | Star);
 
@@ -532,15 +517,20 @@ CtrlF12Key: [cC][tT][rR][lL][fF][1][2];
 PageUpKey: [pP][aA][gG][eE][uU][pP];
 PageDownKey: [pP][aA][gG][eE][dD][oO][wW][nN];
 HomeKey: [hH][oO][mM][eE];
-EndKey: ('End') | ([eN][nN][dD]);   // #SPIKE
+EndKey: ('End') | ([eN][nN][dD]); // #SPIKE
 CursorLeft: [cC][uU][rR][sS][oO][rR][lL][eE][fF][tT];
-CursorRight: [cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];
+CursorRight:
+	[cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];
 CursorDown: [cC][uU][rR][sS][oO][rR][dD][oO][wW][nN];
 CursorUp: [cC][uU][rR][sS][oO][rR][uU][pP];
-CtrlCursorLeft: [cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][lL][eE][fF][tT];
-CtrlCursorDown: [cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][dD][oO][wW][nN];
-CtrlCursorUp: [cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][uU][pP];
-CtrlCursorRight: [cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];
+CtrlCursorLeft:
+	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][lL][eE][fF][tT];
+CtrlCursorDown:
+	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][dD][oO][wW][nN];
+CtrlCursorUp:
+	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][uU][pP];
+CtrlCursorRight:
+	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];
 Align8: [_][aA][lL][iI][gG][nN][(][8][)];
 Align7: [_][aA][lL][iI][gG][nN][(][7][)];
 Align6: [_][aA][lL][iI][gG][nN][(][6][)];
@@ -551,14 +541,15 @@ Align2: [_][aA][lL][iI][gG][nN][(][2][)];
 Align1: [_][aA][lL][iI][gG][nN][(][1][)];
 Align0: [_][aA][lL][iI][gG][nN][(][0][)];
 
-Identifier
-    : (SimpleId
-	| DotThisId
-	| DotConstId
-	| DoubleColonId
-	| SysVarId
-	| ArrayAccessId
-	| ByteAccessIndexerId);
+Identifier: (
+		SimpleId
+		| DotThisId
+		| DotConstId
+		| DoubleColonId
+		| SysVarId
+		| ArrayAccessId
+		| ByteAccessIndexerId
+	);
 
 ByteAccessIndexerId: Byte LeftParen DigitSequence RightParen;
 
@@ -578,7 +569,8 @@ DoubleColonId: (IdentifierNondigit (IdentifierNondigit | Digit)*) (
 		)
 	)*;
 
-DotConstId: IdentifierNondigit (IdentifierNondigit | Digit)* Dot Constant;
+DotConstId:
+	IdentifierNondigit (IdentifierNondigit | Digit)* Dot Constant;
 
 DotThisId: (
 		(This | IdentifierNondigit) (IdentifierNondigit | Digit)*
@@ -603,9 +595,12 @@ AccessToSignalIdentifier:
 		| TxRequest
 	)?;
 
-SysvarIdentifier
-    : AtSign Whitespace? Sysvar? Whitespace? ( DoubleColon Whitespace? Identifier)*
-	| AtSign Whitespace? Identifier Whitespace? (DoubleColon Whitespace? Identifier
+SysvarIdentifier:
+	AtSign Whitespace? Sysvar? Whitespace? (
+		DoubleColon Whitespace? Identifier
+	)*
+	| AtSign Whitespace? Identifier Whitespace? (
+		DoubleColon Whitespace? Identifier
 	)*;
 
 fragment IdentifierNondigit: Nondigit | UniversalCharacterName;
@@ -621,21 +616,20 @@ fragment UniversalCharacterName:
 fragment HexQuad:
 	HexadecimalDigit HexadecimalDigit HexadecimalDigit HexadecimalDigit;
 
-Constant
-    : IntegerConstant
+Constant:
+	IntegerConstant
 	| FloatingConstant
 	| CharacterConstant
-	| MessageHexConst
-	;
+	| MessageHexConst;
 
-MessageHexConst: HexadecimalPrefix HexadecimalDigitSequence ([xX])?;
+MessageHexConst:
+	HexadecimalPrefix HexadecimalDigitSequence ([xX])?;
 
-fragment IntegerConstant
-    : DecimalConstant IntegerSuffix?
+fragment IntegerConstant:
+	DecimalConstant IntegerSuffix?
 	| OctalConstant IntegerSuffix?
 	| HexadecimalConstant IntegerSuffix?
-	| BinaryConstant
-	;
+	| BinaryConstant;
 
 fragment BinaryConstant: '0' [bB] [0-1]+;
 
@@ -643,7 +637,8 @@ fragment DecimalConstant: NonzeroDigit Digit*;
 
 fragment OctalConstant: '0' OctalDigit*;
 
-fragment HexadecimalConstant: HexadecimalPrefix HexadecimalDigit+;
+fragment HexadecimalConstant:
+	HexadecimalPrefix HexadecimalDigit+;
 
 fragment HexadecimalPrefix: '0' [xX];
 
@@ -726,7 +721,7 @@ fragment SChar:
 	~["\\\r\n]
 	| EscapeSequence
 	| '\\\n' // Added line
-	| '\\\r\n' ; // Added line
+	| '\\\r\n'; // Added line
 
 /* Directives go to hidden channel */
 IncludeDirective:

@@ -61,6 +61,18 @@ public partial class CaplBaseListener : ICaplListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitIncludeSection([NotNull] CaplParser.IncludeSectionContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.variableSection"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterVariableSection([NotNull] CaplParser.VariableSectionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.variableSection"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitVariableSection([NotNull] CaplParser.VariableSectionContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.caplTypelessSection"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -84,66 +96,6 @@ public partial class CaplBaseListener : ICaplListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitCaplTypeSection([NotNull] CaplParser.CaplTypeSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.variableSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterVariableSection([NotNull] CaplParser.VariableSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.variableSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitVariableSection([NotNull] CaplParser.VariableSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.timerSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterTimerSection([NotNull] CaplParser.TimerSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.timerSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitTimerSection([NotNull] CaplParser.TimerSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSysvarSection([NotNull] CaplParser.SysvarSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSysvarSection([NotNull] CaplParser.SysvarSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.sysvarUpdateSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.sysvarUpdateSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.envSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterEnvSection([NotNull] CaplParser.EnvSectionContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.envSection"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitEnvSection([NotNull] CaplParser.EnvSectionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.postfixExpression"/>.
 	/// <para>The default implementation does nothing.</para>

@@ -45,6 +45,12 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitIncludeSection([NotNull] CaplParser.IncludeSectionContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CaplParser.variableSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitVariableSection([NotNull] CaplParser.VariableSectionContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.caplTypelessSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -56,36 +62,6 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitCaplTypeSection([NotNull] CaplParser.CaplTypeSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.variableSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitVariableSection([NotNull] CaplParser.VariableSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.timerSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitTimerSection([NotNull] CaplParser.TimerSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.sysvarSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSysvarSection([NotNull] CaplParser.SysvarSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.sysvarUpdateSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitSysvarUpdateSection([NotNull] CaplParser.SysvarUpdateSectionContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.envSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitEnvSection([NotNull] CaplParser.EnvSectionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.postfixExpression"/>.
 	/// </summary>
