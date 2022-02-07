@@ -1,0 +1,37 @@
+variables
+{
+   ethernetPacket tcpPack;
+   ethernetStatus inetStat;
+}
+
+on ethernetPacket Ethernet.*
+{
+}
+
+on ethernetPacket Ethernet . *
+{
+}
+
+on ethernetPacket Eth_02.*
+{
+}
+
+on ethernetPacket *
+{
+}
+
+on ethernetStatus Ethernet.*
+{
+}
+
+on ethernetStatus Ethernet . *
+{
+}
+
+on ethernetStatus Eth_02.*
+{
+}
+
+on ethernetStatus *
+{
+}

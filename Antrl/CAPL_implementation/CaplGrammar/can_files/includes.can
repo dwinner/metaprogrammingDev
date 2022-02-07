@@ -1,0 +1,7 @@
+/* Include block */
+includes
+{
+    #include "file1.cin"
+    #include "file2.cin"
+    #include "file3.cin"
+}

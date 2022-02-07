@@ -1,0 +1,54 @@
+variables
+{
+   // timer declarations
+   timer simpleTimer;
+   timer delayTimer;
+}
+
+on timer delayTimer
+{
+    message DomeLight dlMsg;
+    dlMsg.Status = 0; // turns off dome light
+    output(dlMsg);
+}
+
+on timer Flow_Control
+{
+}
+
+on timer ParamTimer (int a, const int b)
+{
+}
+
+on timer HudTimer.*
+{
+}
+
+on timer HudTimer . Warning
+{
+}
+
+on timer HudTimer . Warning.*
+{
+}
+
+on timer KeyReleaseTimer
+{
+   write("Release Key: %d",LastKey);
+   switch(LastKey)
+   {
+      case CursorUp   : @eKeyUpState=0;break;//Taste up 
+      case CursorDown : @eKeyDownState=0;break;//Taste down
+      case CursorRight: @eKeyMenuUpState=0;break;//Taste right
+      case CursorLeft : @eKeyMenuDownState=0;break;//Taste left
+      case PageUp     : @eKeyWheelEventCodeLeft_P1=0;break;//Taste m
+      case PageDown   : @eKeyWheelEventCodeLeft_M1=0;break;//Taste m
+      case 0xD        : @eKeyOkWheelLeftState=0; break;//Taste Enter
+      case 'm'        : @eKeyMenuState=0;break;//Taste m
+      case 'M'        : @eKeyMenuState=0;break;//Taste m
+      default: break;
+   }
+   
+   LastKey=0;
+   cancelTimer( KeyReleaseTimer );
+}

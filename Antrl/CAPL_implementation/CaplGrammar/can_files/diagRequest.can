@@ -1,0 +1,69 @@
+variables
+{
+   diagRequest diagReq;
+   diagResponse diagResp;
+}
+
+on diagRequest a-b
+{
+}
+
+on diagRequest a - b
+{
+}
+
+on diagRequest 0x100
+{
+}
+
+on diagRequest *
+{
+}
+
+on diagRequest Door.*
+{
+}
+
+on diagRequest Door . *
+{
+}
+
+on diagRequest Door.Sessions::*
+{
+}
+
+on diagRequest Door . Sessions :: *
+{
+}
+
+on diagResponse a-b
+{
+}
+
+on diagResponse a - b
+{
+}
+
+on diagResponse 0x100
+{
+}
+
+on diagResponse *
+{
+}
+
+on diagResponse Door.*
+{
+}
+
+on diagResponse Door . *
+{
+}
+
+on diagResponse Door.Sessions::*
+{
+}
+
+on diagResponse Door . Sessions :: *
+{
+}

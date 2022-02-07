@@ -1,0 +1,101 @@
+on stopMeasurement
+{
+}
+
+on preStart
+{
+}
+
+on start
+{
+   char date [7];
+   char systemtime [7];
+   long datetime[9];
+   int i;
+   char temp[3];
+	for(i=0;i<3;i++)
+		temp[i]=0;
+
+	getlocaltime(datetime);
+
+	datetime[4]++;	//increment month
+	if(datetime[5]>=100)	//later than millenium
+		datetime[5]=datetime[5]-100;
+	
+	//day
+	ltoa(datetime[3], temp, 10);
+	if(datetime[3]<10){
+		date[0]='0';
+		date[1]=temp[0];
+	}
+	else{
+		date[0]=temp[0];
+		date[1]=temp[1];
+	}
+	
+	//month
+	for(i=0;i<3;i++)
+		temp[i]=0;
+	
+	ltoa(datetime[4], temp, 10);
+	if(datetime[4]<10){
+		date[2]='0';
+		date[3]=temp[0];
+	}
+	else{
+		date[2]=temp[0];
+		date[3]=temp[1];
+	}
+
+	//year
+	for(i=0;i<3;i++)
+		temp[i]=0;
+	
+	ltoa(datetime[5], temp, 10);
+	if(datetime[5]<10){
+		date[4]='0';
+		date[5]=temp[0];
+	}
+	else{
+		date[4]=temp[0];
+		date[5]=temp[1];
+	}
+	
+	putvalue(env_FSG_date, date);
+	settimer(systemtimetimer, 100);
+}
+
+on preStop
+{
+}
+
+on busOn
+{
+}
+
+on busOff
+{
+    resetCan();
+    write("CAN has been reset due to BUSOFF ( coded version )");
+}
+
+on errorFrame
+{
+    char char_message[26] = "Hello";
+    int pretime = 0;
+    
+    if (this.can == 1 && (timeNow() - pretime) < 100000)
+        write("Error frames received less than one second apart on channel 1.");
+}
+
+on errorActive
+{
+}
+
+on errorPassive
+{
+}
+
+on someVar
+{
+}

@@ -1,0 +1,89 @@
+variables
+{
+   msTimer myTimer; // creates a millisecond timer    
+   msTimer myTimer; // creates a millisecond timer
+   msTimer timer1; // define timer1
+   mstimer systemtimetimer;
+   msTimer KeyReleaseTimer;
+}
+
+on timer myTimer // when myTimer expires (after 20 ms)
+{
+   setTimer(timer1, 100); // reset the timer
+}
+
+on timer myTimer // when myTimer expires (after 20 ms)
+{
+   output(msg); // output the message
+
+   msg1.byte(0) = msg1.byte(0) + 1; // increment the data
+   output(msg1); // output message
+   setTimer(timer1, 100); // reset the timer
+
+   msgA.byte(0)=msgA.byte(0)-1; // change the data
+   output(msgA); // output message
+}
+
+on timer tmrCycle
+{
+   write ("within cycle");
+}
+
+on timer systemtimetimer
+{
+   char systemtime [7];
+   long datetime[9];
+   int i;
+   char temp[3];
+
+	settimer(systemtimetimer, 1000);
+
+	for(i=0;i<3;i++)
+		temp[i]=0;
+
+	getlocaltime(datetime);	
+
+	//hours
+	ltoa(datetime[2], temp, 10);
+
+	if(datetime[2]<10){
+		systemtime[0]='0';
+		systemtime[1]=temp[0];
+	}
+	else{
+		systemtime[0]=temp[0];
+		systemtime[1]=temp[1];
+	}
+
+	//minutes
+	for(i=0;i<3;i++)
+		temp[i]=0;
+
+	ltoa(datetime[1], temp, 10);
+
+	if(datetime[1]<10){
+		systemtime[2]='0';
+		systemtime[3]=temp[0];
+	}
+	else{
+		systemtime[2]=temp[0];
+		systemtime[3]=temp[1];
+	}
+
+	//seconds
+	for(i=0;i<3;i++)
+		temp[i]=0;
+
+	ltoa(datetime[0], temp, 10);
+
+	if(datetime[0]<10){
+		systemtime[4]='0';
+		systemtime[5]=temp[0];
+	}
+	else{
+		systemtime[4]=temp[0];
+		systemtime[5]=temp[1];
+	}
+	
+	putvalue(env_FSG_time, systemtime);
+}
