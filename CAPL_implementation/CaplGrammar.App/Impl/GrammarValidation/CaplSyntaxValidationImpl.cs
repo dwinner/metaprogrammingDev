@@ -36,7 +36,7 @@ namespace CaplGrammar.Application.Impl.GrammarValidation
             caplParser.RemoveErrorListeners();
             var errorHandler = new DefaultErrorHandlerImpl();   // TODO: inject in ctor
             caplParser.AddErrorListener(errorHandler);
-            var caplRoot = caplParser.primaryExpression();
+            var caplRoot = caplParser.compilationUnit();
 
             return caplRoot.IsEmpty ? errorHandler.Issues : Enumerable.Empty<CaplIssue>();
         }

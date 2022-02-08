@@ -42,16 +42,6 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitPrimaryExpression([NotNull] CaplParser.PrimaryExpressionContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.includeSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -721,6 +711,26 @@ public interface ICaplListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitJumpStatement([NotNull] CaplParser.JumpStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.compilationUnit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterCompilationUnit([NotNull] CaplParser.CompilationUnitContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.compilationUnit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitCompilationUnit([NotNull] CaplParser.CompilationUnitContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.translationUnit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterTranslationUnit([NotNull] CaplParser.TranslationUnitContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.translationUnit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitTranslationUnit([NotNull] CaplParser.TranslationUnitContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.externalDeclaration"/>.
 	/// </summary>

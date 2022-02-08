@@ -4,27 +4,16 @@
 
 grammar Capl;
 
-// The root parser node
-primaryExpression:
-	Identifier
+primaryExpression
+    : Identifier
 	| AccessToSignalIdentifier
 	| SysvarIdentifier
 	| Constant
+	| structSpecifier   // TODO: ineffective deeply nested structure
+	| enumSpecifier     // TODO: ineffective deeply nested structure
 	| StringLiteral+
 	| LeftParen expression RightParen
 	| LeftParen compoundStatement RightParen
-	| topLevelSection+
-	;
-
-topLevelSection
-    : includeSection
-		| variableSection
-		| functionDefinition
-		| enumSpecifier
-		| structSpecifier
-		| caplTypelessSection
-		| caplTypeSection
-		| externalDeclaration
 	;
 
 /* Top CAPL's sections */
@@ -318,7 +307,25 @@ forExpression:
 
 jumpStatement: ((Continue | Break) | Return expression?) Semi;
 
-externalDeclaration: functionDefinition | declaration | Semi;
+compilationUnit
+    : translationUnit? EOF
+    ;
+
+translationUnit
+    :   externalDeclaration+
+    ;
+
+externalDeclaration
+    : functionDefinition
+    | declaration
+    | variableSection
+    | includeSection
+    | enumSpecifier
+    | structSpecifier
+    | caplTypelessSection
+    | caplTypeSection
+    | Semi
+    ;
 
 functionDefinition:
 	declarationSpecifiers? declarator declarationList? compoundStatement;
@@ -468,13 +475,13 @@ Align1: [_][aA][lL][iI][gG][nN][(][1][)];
 Align0: [_][aA][lL][iI][gG][nN][(][0][)];
 
 Identifier
-    : (SimpleId
-	    | DotThisId
-		| DotConstId
-		| DoubleColonId
-		| SysVarId
-		| ArrayAccessId
-		| ByteAccessIndexerId)
+    : SimpleId
+	  | DotThisId
+	  | DotConstId
+	  | DoubleColonId
+	  | SysVarId
+	  | ArrayAccessId
+	  | ByteAccessIndexerId
 	;
 
 ByteAccessIndexerId: Byte LeftParen DigitSequence RightParen;

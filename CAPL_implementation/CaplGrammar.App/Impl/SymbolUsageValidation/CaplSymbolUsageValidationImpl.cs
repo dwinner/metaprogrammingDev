@@ -30,7 +30,7 @@ namespace CaplGrammar.Application.Impl.SymbolUsageValidation
             var caplLexer = new CaplLexer(antlrStream);
             var tokens = new CommonTokenStream(caplLexer);
             var caplParser = new CaplParser(tokens) { BuildParseTree = true };
-            var caplAst = caplParser.primaryExpression();
+            var caplAst = caplParser.compilationUnit();
 
             var walker = new ParseTreeWalker();
             var definitionPhase = new DefinitionPhaseVisitor();

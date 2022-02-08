@@ -39,12 +39,6 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitPrimaryExpression([NotNull] CaplParser.PrimaryExpressionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.includeSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -446,6 +440,18 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitJumpStatement([NotNull] CaplParser.JumpStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CaplParser.compilationUnit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitCompilationUnit([NotNull] CaplParser.CompilationUnitContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CaplParser.translationUnit"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTranslationUnit([NotNull] CaplParser.TranslationUnitContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.externalDeclaration"/>.
 	/// </summary>
