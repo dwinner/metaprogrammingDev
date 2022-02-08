@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from Capl.g4 by ANTLR 4.9.2
+// Generated from D:/Projects/metaproDev/CAPL_implementation/CaplGrammar\Capl.g4 by ANTLR 4.9.2
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -5712,6 +5712,7 @@ public partial class CaplParser : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ConstantExpressionContext constantExpression() {
 			return GetRuleContext<ConstantExpressionContext>(0);
 		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SimpleId() { return GetToken(CaplParser.SimpleId, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Default() { return GetToken(CaplParser.Default, 0); }
 		public LabeledStatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -5762,19 +5763,74 @@ public partial class CaplParser : Parser {
 				Match(Case);
 				State = 760;
 				ErrorHandler.Sync(this);
-				switch ( Interpreter.AdaptivePredict(TokenStream,94,Context) ) {
-				case 1:
+				switch (TokenStream.LA(1)) {
+				case Export:
+				case Testcase:
+				case Testfunction:
+				case Includes:
+				case Const:
+				case EthernetPacket:
+				case EthernetStatus:
+				case MostAmsMessage:
+				case MostMessage:
+				case On:
+				case Variables:
+				case Char:
+				case Byte:
+				case Double:
+				case Float:
+				case Int:
+				case Word:
+				case Dword:
+				case Qword:
+				case MsTimer:
+				case Long:
+				case Int64:
+				case Void:
+				case Struct:
+				case Enum:
+				case Timer:
+				case Message:
+				case MultiplexedMessage:
+				case DiagRequest:
+				case DiagResponse:
+				case Signal:
+				case Align8:
+				case Align7:
+				case Align6:
+				case Align5:
+				case Align4:
+				case Align3:
+				case Align2:
+				case Align1:
+				case Align0:
+				case Identifier:
+				case AccessToSignalIdentifier:
+				case SysvarIdentifier:
+				case Constant:
+				case DigitSequence:
+				case StringLiteral:
+				case LeftParen:
+				case Plus:
+				case PlusPlus:
+				case MinusMinus:
+				case Not:
+				case Tilde:
+				case Semi:
+				case Minus:
 					{
 					State = 758;
 					constantExpression();
 					}
 					break;
-				case 2:
+				case SimpleId:
 					{
 					State = 759;
-					Match(Identifier);
+					Match(SimpleId);
 					}
 					break;
+				default:
+					throw new NoViableAltException(this);
 				}
 				State = 762;
 				Match(Colon);
@@ -8801,8 +8857,8 @@ public partial class CaplParser : Parser {
 		's', '\x3', '\x2', '\x2', '\x2', '\x2F4', '\x2F5', '\a', '\x43', '\x2', 
 		'\x2', '\x2F5', '\x2F6', '\a', 'n', '\x2', '\x2', '\x2F6', '\x302', '\x5', 
 		'r', ':', '\x2', '\x2F7', '\x2FA', '\a', '\x1A', '\x2', '\x2', '\x2F8', 
-		'\x2FB', '\x5', '\x32', '\x1A', '\x2', '\x2F9', '\x2FB', '\a', '\x43', 
-		'\x2', '\x2', '\x2FA', '\x2F8', '\x3', '\x2', '\x2', '\x2', '\x2FA', '\x2F9', 
+		'\x2FB', '\x5', '\x32', '\x1A', '\x2', '\x2F9', '\x2FB', '\a', 'I', '\x2', 
+		'\x2', '\x2FA', '\x2F8', '\x3', '\x2', '\x2', '\x2', '\x2FA', '\x2F9', 
 		'\x3', '\x2', '\x2', '\x2', '\x2FB', '\x2FC', '\x3', '\x2', '\x2', '\x2', 
 		'\x2FC', '\x2FD', '\a', 'n', '\x2', '\x2', '\x2FD', '\x302', '\x5', 'r', 
 		':', '\x2', '\x2FE', '\x2FF', '\a', '\x1E', '\x2', '\x2', '\x2FF', '\x300', 

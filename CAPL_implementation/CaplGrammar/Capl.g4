@@ -285,7 +285,7 @@ statement:
 
 labeledStatement
     : Identifier Colon statement
-	| Case (constantExpression | Identifier) Colon statement // TODO: there is no point to use all alternatives for Identifier-rule in case-labels
+	| Case (constantExpression | SimpleId) Colon statement
 	| Default Colon statement
 	;
 
