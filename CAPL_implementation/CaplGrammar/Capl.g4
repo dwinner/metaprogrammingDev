@@ -183,7 +183,7 @@ typeSpecifier: (
 		| Word And?
 		| Dword And?
 		| Qword And?
-		| Timer // TODO: Reduce timer type
+		| Timer
 		| MsTimer
 		| structSpecifier And?
 		| enumSpecifier And?
