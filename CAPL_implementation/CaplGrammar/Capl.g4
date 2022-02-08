@@ -183,7 +183,7 @@ typeSpecifier: (
 		| Word And?
 		| Dword And?
 		| Qword And?
-		| Timer
+		| Timer // TODO: Reduce timer type
 		| MsTimer
 		| structSpecifier And?
 		| enumSpecifier And?
@@ -285,7 +285,7 @@ statement:
 
 labeledStatement
     : Identifier Colon statement
-	| Case (constantExpression | Identifier) Colon statement
+	| Case (constantExpression | Identifier) Colon statement // TODO: there is no point to use all alternatives for Identifier-rule in case-labels
 	| Default Colon statement
 	;
 
@@ -450,89 +450,10 @@ ethernetType: (EthernetPacket | EthernetStatus) (
 		| Identifier (Minus | DoubleColon)? Identifier
 	);
 
+// TODO: there is no point to use all alternatives for Identifier-rule for key events
 keyEventType: Key (Constant | Identifier | Star);
 Key: [kK][eE][yY];
 
-/*KeyConstants: (
-		F1Key
-		| F2Key
-		| F3Key
-		| F4Key
-		| F5Key
-		| F6Key
-		| F7Key
-		| F8Key
-		| F9Key
-		| F10Key
-		| F11Key
-		| F12Key
-		| CtrlF1Key
-		| CtrlF2Key
-		| CtrlF3Key
-		| CtrlF4Key
-		| CtrlF5Key
-		| CtrlF6Key
-		| CtrlF7Key
-		| CtrlF8Key
-		| CtrlF9Key
-		| CtrlF10Key
-		| CtrlF11Key
-		| CtrlF12Key
-		| PageUpKey
-		| PageDownKey
-		| HomeKey
-		| EndKey
-		| CursorUp
-		| CursorDown
-		| CursorRight
-		| CursorLeft
-		| CtrlCursorUp
-		| CtrlCursorDown
-		| CtrlCursorRight
-		| CtrlCursorLeft
-	);
-Key: [kK][eE][yY];
-F1Key: [fF][1];
-F2Key: [fF][2];
-F3Key: [fF][3];
-F4Key: [fF][4];
-F5Key: [fF][5];
-F6Key: [fF][6];
-F7Key: [fF][7];
-F8Key: [fF][8];
-F9Key: [fF][9];
-F10Key: [fF][1][0];
-F11Key: [fF][1][1];
-F12Key: [fF][1][2];
-CtrlF1Key: [cC][tT][rR][lL][fF][1];
-CtrlF2Key: [cC][tT][rR][lL][fF][2];
-CtrlF3Key: [cC][tT][rR][lL][fF][3];
-CtrlF4Key: [cC][tT][rR][lL][fF][4];
-CtrlF5Key: [cC][tT][rR][lL][fF][5];
-CtrlF6Key: [cC][tT][rR][lL][fF][6];
-CtrlF7Key: [cC][tT][rR][lL][fF][7];
-CtrlF8Key: [cC][tT][rR][lL][fF][8];
-CtrlF9Key: [cC][tT][rR][lL][fF][9];
-CtrlF10Key: [cC][tT][rR][lL][fF][1][0];
-CtrlF11Key: [cC][tT][rR][lL][fF][1][1];
-CtrlF12Key: [cC][tT][rR][lL][fF][1][2];
-PageUpKey: [pP][aA][gG][eE][uU][pP];
-PageDownKey: [pP][aA][gG][eE][dD][oO][wW][nN];
-HomeKey: [hH][oO][mM][eE];
-EndKey: ('End') | ([eN][nN][dD]); // #SPIKE
-CursorLeft: [cC][uU][rR][sS][oO][rR][lL][eE][fF][tT];
-CursorRight:
-	[cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];
-CursorDown: [cC][uU][rR][sS][oO][rR][dD][oO][wW][nN];
-CursorUp: [cC][uU][rR][sS][oO][rR][uU][pP];
-CtrlCursorLeft:
-	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][lL][eE][fF][tT];
-CtrlCursorDown:
-	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][dD][oO][wW][nN];
-CtrlCursorUp:
-	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][uU][pP];
-CtrlCursorRight:
-	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];*/
 Align8: [_][aA][lL][iI][gG][nN][(][8][)];
 Align7: [_][aA][lL][iI][gG][nN][(][7][)];
 Align6: [_][aA][lL][iI][gG][nN][(][6][)];
@@ -543,15 +464,15 @@ Align2: [_][aA][lL][iI][gG][nN][(][2][)];
 Align1: [_][aA][lL][iI][gG][nN][(][1][)];
 Align0: [_][aA][lL][iI][gG][nN][(][0][)];
 
-Identifier: (
-		SimpleId
-		| DotThisId
+Identifier
+    : (SimpleId
+	    | DotThisId
 		| DotConstId
 		| DoubleColonId
 		| SysVarId
 		| ArrayAccessId
-		| ByteAccessIndexerId
-	);
+		| ByteAccessIndexerId)
+	;
 
 ByteAccessIndexerId: Byte LeftParen DigitSequence RightParen;
 
