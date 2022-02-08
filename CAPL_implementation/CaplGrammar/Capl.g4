@@ -13,8 +13,11 @@ primaryExpression:
 	| StringLiteral+
 	| LeftParen expression RightParen
 	| LeftParen compoundStatement RightParen
-	| (
-		includeSection
+	| topLevelSection+
+	;
+
+topLevelSection
+    : includeSection
 		| variableSection
 		| functionDefinition
 		| enumSpecifier
@@ -22,7 +25,7 @@ primaryExpression:
 		| caplTypelessSection
 		| caplTypeSection
 		| externalDeclaration
-	)+;
+	;
 
 /* Top CAPL's sections */
 includeSection: Includes LeftBrace IncludeDirective* RightBrace;

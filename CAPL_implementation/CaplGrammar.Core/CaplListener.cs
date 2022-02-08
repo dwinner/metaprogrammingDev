@@ -42,6 +42,16 @@ public interface ICaplListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitPrimaryExpression([NotNull] CaplParser.PrimaryExpressionContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.includeSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

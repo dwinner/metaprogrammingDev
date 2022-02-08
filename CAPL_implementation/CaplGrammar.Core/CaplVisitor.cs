@@ -39,6 +39,12 @@ public interface ICaplVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitPrimaryExpression([NotNull] CaplParser.PrimaryExpressionContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CaplParser.includeSection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

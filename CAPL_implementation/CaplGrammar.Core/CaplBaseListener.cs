@@ -49,6 +49,18 @@ public partial class CaplBaseListener : ICaplListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitPrimaryExpression([NotNull] CaplParser.PrimaryExpressionContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CaplParser.topLevelSection"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitTopLevelSection([NotNull] CaplParser.TopLevelSectionContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CaplParser.includeSection"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
