@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from D:/Projects/metaproDev/Antrl/CAPL_implementation/CaplGrammar\Capl.g4 by ANTLR 4.9.2
+// Generated from Capl.g4 by ANTLR 4.9.2
 
 // Unreachable code detected
 #pragma warning disable 0162

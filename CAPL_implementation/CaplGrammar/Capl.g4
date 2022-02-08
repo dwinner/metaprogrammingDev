@@ -283,10 +283,11 @@ statement:
 	| iterationStatement
 	| jumpStatement;
 
-labeledStatement:
-	Identifier Colon statement
-	| Case (constantExpression | KeyConstants) Colon statement
-	| Default Colon statement;
+labeledStatement
+    : Identifier Colon statement
+	| Case (constantExpression | Identifier) Colon statement
+	| Default Colon statement
+	;
 
 compoundStatement: LeftBrace blockItemList? RightBrace;
 
@@ -449,9 +450,10 @@ ethernetType: (EthernetPacket | EthernetStatus) (
 		| Identifier (Minus | DoubleColon)? Identifier
 	);
 
-keyEventType: Key (Constant | KeyConstants | Star);
+keyEventType: Key (Constant | Identifier | Star);
+Key: [kK][eE][yY];
 
-KeyConstants: (
+/*KeyConstants: (
 		F1Key
 		| F2Key
 		| F3Key
@@ -530,7 +532,7 @@ CtrlCursorDown:
 CtrlCursorUp:
 	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][uU][pP];
 CtrlCursorRight:
-	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];
+	[cC][tT][rR][lL][cC][uU][rR][sS][oO][rR][rR][iI][gG][hH][tT];*/
 Align8: [_][aA][lL][iI][gG][nN][(][8][)];
 Align7: [_][aA][lL][iI][gG][nN][(][7][)];
 Align6: [_][aA][lL][iI][gG][nN][(][6][)];
