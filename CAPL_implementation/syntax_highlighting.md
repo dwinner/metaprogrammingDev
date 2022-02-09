@@ -65,44 +65,6 @@
 - raw64;
 - rx;
 - txRq;
-
-### Key constants
-- F1;
-- F2;
-- F3;
-- F4;
-- F5;
-- F6;
-- F7;
-- F8;
-- F9;
-- F10;
-- F11;
-- F12;
-- ctrlF1;
-- ctrlF2;
-- ctrlF3;
-- ctrlF4;
-- ctrlF5;
-- ctrlF6;
-- ctrlF7;
-- ctrlF8;
-- ctrlF9;
-- ctrlF10;
-- ctrlF11;
-- ctrlF12;
-- pageUp;
-- pageDown;
-- home;
-- end;
-- cursorLeft;
-- cursorRight;
-- cursorDown;
-- cursorUp;
-- ctrlCursorLeft;
-- ctrlCursorDown;
-- ctrlCursorUp;
-- ctrlCursorRight;
 - _align;
 
 ### Valid tokens
@@ -159,5 +121,4 @@
 
 #### Please take into account:
 - All keywords in CAPL are really case-insensitive, and the following example is the same and valid: Includes, inClUdEs, INCLUDES;
-- Key constants act as predefined identifiers - not real keywords: they shouldn't place under keywords - looks like there should be another place or section in VS Code extensions to take it under specific highlighting handling;
 - See there https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide for details;
