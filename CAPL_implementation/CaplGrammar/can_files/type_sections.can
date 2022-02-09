@@ -1,0 +1,63 @@
+on envVar EnvKL15
+{
+}
+
+on envVar (EnvKL15)
+{
+}
+
+on envVar ( EnvKL15 )
+{
+}
+
+on sysvar_update sysvar::ASG_AudioSD::MeImSe_InID
+{
+}
+
+on sysvar_update DoIP1::ASG_AudioSD::MeImSe_InID
+{
+}
+
+on sysvar_update DoIP::ClearRxBuf
+{
+}
+
+on sysvar_update DoIP1 :: ASG_AudioSD::MeImSe_InID
+{
+}
+
+on sysvar_update DoIP :: ClearRxBuf
+{
+}
+
+on sysvar sysvar::ASG_AudioSD::MeImSe_InID
+{
+}
+
+on sysvar DoIP1::ASG_AudioSD::MeImSe_InID
+{
+}
+
+on sysvar DoIP::ClearRxBuf
+{
+}
+
+on sysvar DoIP1 :: ASG_AudioSD::MeImSe_InID
+{
+}
+
+on sysvar DoIP :: ClearRxBuf
+{
+}
+
+on sysvar sysvar::VTS::Speed::PWMFreq
+{
+    if (@sysvar::VTS::Speed::PWMFreq > 100)
+        TestSupplyTextEvent ("Speed100");
+}
+
+on envVar LEDSwitch /* Triggered when LED Switch changes */
+{
+    int val;
+    val = getValue(this);
+}

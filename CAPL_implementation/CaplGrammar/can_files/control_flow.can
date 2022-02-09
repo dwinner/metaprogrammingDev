@@ -1,0 +1,242 @@
+void unconditionalSample()
+{
+    int x, y, z;
+    while ( x != 0 )
+    {
+        doThis (x);
+        if ( x == 0 )
+            break;
+        doThat (x);
+    }
+
+    while ( x != 0 )
+    {
+        doThis (x);
+        if ( x == 4 )
+            continue;
+        doThat (x);
+    }
+}
+
+void iterationStatEx()
+{
+    int index;
+    index = 0;
+    while ( number != 0 )
+    {
+        binaryArray[index++] = number % 10;
+        number = number / 10;
+    }
+
+    do
+    {
+        binaryArray[index++] = number % 10;
+        number = number / 10;
+    }
+    while ( number != 0 );
+
+    index = 0;
+    for ( ; number != 0; )
+    {
+        binaryArray[index++] = number % 10;
+        number = number / 10;
+    }
+}
+
+void switchSample()
+{
+    float value1, value2, result;
+    char operator;
+
+    switch ( operator )
+    {
+        case '+':
+            result = value1 + value2;
+            break;
+
+        case '-':
+        {
+            result = value1 - value2;
+            break;
+        }
+
+        case '*':
+            result = value1 * value2;
+            break;
+
+        case '/':
+        {
+            if ( value2 == 0)
+                write ("Division by zero!");
+            else
+                result = value1 / value2;
+            break;
+        }
+
+        default:
+            write ("Unknown operator.");
+            break;
+    }
+}
+
+void ifElse()
+{
+    if (this.dir == RX)
+    {
+        SetLightDsp(this.HeadLight, this.FlashLight);
+    }
+    else
+    {
+        write ("Error: LightState TX received by node %NODE_NAME");
+    }
+
+    long tmpLightDsp;
+
+    tmpLightDsp = 0;
+    if (headLight == kOn)
+       tmpLightDsp = 4;
+
+    if (hazardFlasher == kOn)
+    {
+        tmpLightDsp += 3;
+    }
+    
+    int clock_minutes;
+    clock_minutes = clock_minutes + 1;
+    if (clock_minutes >= 60) // if true
+    {
+        clock_minutes = 0;
+        // increment hour variable
+    }
+
+    if (clock_minutes >= 60) // if true
+    {
+        clock_minutes = 0;
+    }
+    else // if false
+    {
+        clock_minutes = clock_minutes + 1;
+    }
+}
+
+void bitwiseSample()
+{
+    byte x, y, z;
+    y = 0x0AA; // y = 1010 1010
+    z = 0x05A; // z = 0101 1010
+    x = y & z; // AND result = 0000 1010
+    x = y | z; // OR result = 1111 1010
+    x = y ^ z; // XOR result = 1111 0000
+    x = y << 1; // shift left result = 0101 0100
+    x = y >> 1; // shift right result = 0101 0101
+    x = ~y; // 1’s complement result = 0101 0101
+}
+
+assignmentOp()
+{
+    int y, z;
+    y = 8;
+    z = 4;
+
+    y += z; // Addition. Result: y = 12
+    y -= z; // Subtraction. Result: y = 4
+    y *= z; // Multiplication. Result: y = 32
+    y /= z; // Division. Result: y = 2
+    y %= z; // Modulo. Result: y = 0
+    y <<= 1; // Left-shift. Result: y = 16
+    y &= z; // AND. Result: y = 0 (binary arithmetic)
+    y |= z; // OR. Result: y = 12 (binary arithmetic)
+    y ^= z; // XOR. Result: y = 12 (binary arithmetic)
+}
+
+void conditionalExpr()
+{
+    int a, b;
+    a = b = 1;
+    int c = a != b ? 0 : b;
+}
+
+void boolExpr()
+{
+    int a = 2, b = 3;
+    byte test = a == 1 && b == 1;
+    test = a == 1 || b == 1;
+    test = a == 1 ^ b == 1;
+    byte test = a == 1 && !(b == 1);
+}
+
+void relationalExpr()
+{
+    int a = 2, b = 3, c;
+    byte test;
+
+    test = a < b;
+    test = a > b;
+    test = a <= b;
+    test = a >= b;
+    test = a != b;
+    test = a == b;
+
+    printf("%s", test);
+}
+
+void shiftExpr()
+{
+    int a = 2, b = 3, c;
+    c = a << b;
+    c = b >> 2;
+}
+
+void additiveExpr()
+{
+    int a = 1, b = 2;
+    int c, d, e ;
+
+    c = a + b;
+    d = a - b;
+    e = (a - b) / (b * c);
+    
+    int x,y,z;
+    y = 8;
+    z = 4;
+    x = y + z;  // Addition. Result = 12
+    x = y - z;  // Subtraction. Result = 4
+    x = y * z;  // Multiplication. Result = 32
+    x = y / z;  // Division. Result = 2
+    x = z % y;  // Modulo. Result = 4
+    x = y++;    // Increment. Result = 9
+    x = z--; 
+}
+
+void multiplicativeExpr()
+{
+    int a = 0;
+    int b = 0;
+    int c, d, e;
+
+    c = a * b;
+    d = a / b;
+    e = a % b;
+}
+
+void unaryExpressions()
+{
+    int b = 8;
+    int a = -b;
+    a = +a;
+    a = -a;
+    a = ~b;
+    b = !a;
+}
+
+int add ( )
+{
+    int i, sum = 0;
+
+    for ( i = 1; i <= LAST; i++ ) {
+      sum += i;
+    } /*-for-*/
+    printf("sum = %d\n", sum);
+
+    return 0;
+}

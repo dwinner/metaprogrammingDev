@@ -1,3 +1,0 @@
-G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build/CMakeFiles/LittleC.dir
-G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build/CMakeFiles/edit_cache.dir
-G:/cpp/Asm,C,C++.AppDev/apps/Little-C-interpreter/build/CMakeFiles/rebuild_cache.dir

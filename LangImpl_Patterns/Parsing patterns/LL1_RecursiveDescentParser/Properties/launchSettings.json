@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LL1_RecursiveDescentParser": {
+      "commandName": "Project",
+      "commandLineArgs": "[1, [2, 3] ]"
+    }
+  }
+}

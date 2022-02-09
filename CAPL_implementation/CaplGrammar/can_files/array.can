@@ -1,0 +1,23 @@
+variables
+{
+    byte binaryArray[16];
+    int twoDim[][];
+    int threeD[][][];
+
+    // more arrays
+    char alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    int sample_data[4] = { 100, 300, 500, 600 };
+    int M[4][5] =
+    {
+        { 10, 5, -3, 17, 82 },
+        { 9, 0, 0, 8, -7 },
+        { 32, 20, 1, 0, 14 },
+        { 0, 0, 8, 7, 6 }
+    };    
+
+    char value11[30] = "Here’s a string in C and CAPL";
+    char value12[19] = "spaces are allowed";
+    char value13[31] = "with a tab escape sequence \t";
+
+    char buffer[10];
+}

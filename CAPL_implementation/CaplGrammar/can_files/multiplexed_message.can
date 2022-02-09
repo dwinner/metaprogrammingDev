@@ -1,0 +1,91 @@
+variables
+{
+   multiplexed_message * eTemp;
+   multiplexed_message EngData EDMsg;
+}
+
+on multiplexed_message can2.0x100
+{
+}
+
+on multiplexed_message 0x1B000000x-0x1B00007Fx
+{
+}
+
+on multiplexed_message 0x1B000000x-0x1B00007F
+{
+}
+
+on multiplexed_message 0x1B000000 - 0x1B00007Fx
+{
+}
+
+on multiplexed_message 0x1B000000x - 0x1B00007Fx
+{
+}
+
+on multiplexed_message 0x1B000000X-0x1B00007FX
+{
+}
+
+on multiplexed_message 0x131
+{
+}
+
+on multiplexed_message 100
+{
+}
+
+On multiplexed_message BAPonly::BAPAudi
+{
+}
+
+on multiplexed_message 0x500-0x57F
+{
+}
+
+on multiplexed_message 0x500 - 0x57F
+{
+}
+
+on multiplexed_message 0x1B000000x-0x1B00007Fx
+{
+}
+
+on multiplexed_message 0x1B000000x - 0x1B00007Fx
+{
+}
+
+on multiplexed_message Meas_IC_4
+{
+}
+
+on multiplexed_message simpleMessage
+{
+}
+
+on multiplexed_message simpleMessage . *
+{
+}
+
+on multiplexed_message simpleMessage . subMessage
+{
+}
+
+on multiplexed_message *
+{
+}
+
+on multiplexed_message CAN1.0x500-0x57F
+{
+}
+
+on multiplexed_message CAN1.0x500 - 0x57F
+{
+}
+
+on multiplexed_message  EDMsg,                        
+                        MeacIC_5,
+                        MeasIC_3
+{
+}

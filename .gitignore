@@ -351,3 +351,11 @@ MigrationBackup/
 
 # IDEA
 .idea/
+
+# Antlr
+.antlr/
+gen/
+
+# NodeJS
+node_modules/
+dist/

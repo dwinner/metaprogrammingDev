@@ -1,0 +1,53 @@
+struct list_el {
+   int val;
+   struct list_el & next;
+};
+
+_align(1) struct MyData {
+   int i;
+   float f;
+};
+
+struct TopLevelSt
+{
+   int first;
+   qword second;
+   signal * sig;
+};
+
+variables
+{
+   struct TopLevelSt st1, st2;   
+}
+
+void structExample()
+{
+   /* defining a struct variable and initializing the elements */
+   struct MyData data = {
+      i = 42,
+      f = 1.32
+   };
+
+   /* accessing the struct elements */
+   write("i=%d, f=%f", data.i, data.f);
+}
+
+void qualifiedSample()
+{
+   int var_DBLookupDefaultValue;
+   struct SomeType someValue = DBLookup(lookupSignal(parsedSignal));
+   var_DBLookupDefaultValue = (someValue.DefaultValue * someValue.factor) + someValue.offset;
+}
+
+struct structType funcStructType(
+    struct structType charVal,
+    const struct structType constCharVal,
+    struct structType & charRef)
+{
+}
+
+void dotAccess()
+{
+   struct list_el lst;
+   lst.val = 1;
+}

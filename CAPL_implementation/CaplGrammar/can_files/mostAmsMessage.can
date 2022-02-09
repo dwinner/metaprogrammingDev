@@ -1,0 +1,91 @@
+variables
+{
+   mostAmsMessage * eTemp;
+   mostAmsMessage EngData EDMsg;
+}
+
+on mostAmsMessage can2.0x100
+{
+}
+
+on mostAmsMessage 0x1B000000x-0x1B00007Fx
+{
+}
+
+on mostAmsMessage 0x1B000000x-0x1B00007F
+{
+}
+
+on mostAmsMessage 0x1B000000 - 0x1B00007Fx
+{
+}
+
+on mostAmsMessage 0x1B000000x - 0x1B00007Fx
+{
+}
+
+on mostAmsMessage 0x1B000000X-0x1B00007FX
+{
+}
+
+on mostAmsMessage 0x131
+{
+}
+
+on mostAmsMessage 100
+{
+}
+
+On mostAmsMessage BAPonly::BAPAudi
+{
+}
+
+on mostAmsMessage 0x500-0x57F
+{
+}
+
+on mostAmsMessage 0x500 - 0x57F
+{
+}
+
+on mostAmsMessage 0x1B000000x-0x1B00007Fx
+{
+}
+
+on mostAmsMessage 0x1B000000x - 0x1B00007Fx
+{
+}
+
+on mostAmsMessage Meas_IC_4
+{
+}
+
+on mostAmsMessage simpleMessage
+{
+}
+
+on mostAmsMessage simpleMessage . *
+{
+}
+
+on mostAmsMessage simpleMessage . subMessage
+{
+}
+
+on mostAmsMessage *
+{
+}
+
+on mostAmsMessage CAN1.0x500-0x57F
+{
+}
+
+on mostAmsMessage CAN1.0x500 - 0x57F
+{
+}
+
+on mostAmsMessage   EDMsg,
+                    MeacIC_5,
+                    MeasIC_3
+{
+}

@@ -1,0 +1,125 @@
+variables
+{
+   // binary digit
+   int i = 0b0011;
+   int j = 0B1010;
+
+   // Hex variables
+   byte y, z;
+   y = 0x00;
+   z = 0x01;
+
+   // const
+   const long kOff = 0;
+   const long kOn = 1;
+   
+   // data types declarations
+   char charVar = 'q';
+   char letter_a = "a";
+   const byte byteVar = 0b10011001;
+   int intVar = 2;
+   long longVar = 0x80000;
+   const int64 int64Var = longVar;
+   float floatVar = 56.0f;
+   const double doubleVar = 90.001;
+   qword qwordVar = 34;
+   word wordVar = (word) qwordVar;
+   
+   int value = 20;
+   int value2 = 0x14;
+   float value3 = 0.23;
+   float value4 = 23E-2;
+
+   char value5 = 'B';
+   char value6 = '8';
+   char value7 = '?';
+   char value8 = 0x42;
+   char value9 = 0x38;
+   char value10 = 0x3F;
+   
+   byte x, y, z;
+   z = 3;
+   y = 5;
+   x = (y < z) ? z : y; // conditional result x = 5
+   x = messagename.signalname; // x is assigned a signal value
+    
+   word LastKey = 0;
+
+   // type casting
+   int sum;
+   sum = 1.6 + 1.7;
+   sum = (int) 1.6 + (int) 1.7;   
+}
+
+void handleHexValues()
+{
+   int value; 
+   value & 0x0FFF; // clears all unnecessary bits 
+}
+
+byte funcByte(byte charVal, const byte constCharVal, byte & charRef)
+{
+}
+
+char funcChar(char charVal, const char constCharVal, char & charRef)
+{
+}
+
+int funcInt(int charVal, const int constCharVal, int & charRef)
+{
+}
+
+long funcLong(long charVal, const long constCharVal, long & charRef)
+{
+}
+
+int64 funcInt64(int64 charVal, const int64 constCharVal, int64 & charRef)
+{
+}
+
+float funcFloat(float charVal, const float constCharVal, float & charRef)
+{
+}
+
+double funcDouble(double charVal, const double constCharVal, double & charRef)
+{
+}
+
+word funcWord(word charVal, const word constCharVal, word & charRef)
+{
+}
+
+dword funcDword(dword charVal, const dword constCharVal, dword & charRef)
+{
+}
+
+qword funcQword(qword charVal, const qword constCharVal, qword & charRef)
+{
+}
+
+void dialog ( void )
+{
+    /* Define default values: */
+    int n = 0;
+    float x = 0.0;
+
+    /* Define contents of dialog window */
+    create_int_dialog_entry("n", n);
+    create_float_dialog_entry("x", x);
+
+    /* Create window with name "Setup" and top-left corner at (0,0) */
+    set_up_dialog("Setup", 0, 0);
+
+    /* Display the window and read the results */
+    read_dialog_window();
+
+    /* Print out the new values */
+    printf("n = %d, x = %f\n", n, x);
+}
+
+castExample()
+{
+	a1 = (int)(b1);
+	a2 = (CustomType)(b2);
+	a5 = b5();
+}
