@@ -18,13 +18,13 @@
  */
 enum tok_types
 {
-   DELIMITER,
-   IDENTIFIER,
-   NUMBER,
-   KEYWORD,
-   TEMP,
-   STRING,
-   BLOCK
+    DELIMITER,
+    IDENTIFIER,
+    NUMBER,
+    KEYWORD,
+    TEMP,
+    STRING,
+    BLOCK
 };
 
 /**
@@ -34,24 +34,24 @@ enum tok_types
  */
 enum error_msg
 {
-   SYNTAX,
-   UNBAL_PARENS,
-   NO_EXP,
-   EQUALS_EXPECTED,
-   NOT_VAR,
-   PARAM_ERR,
-   SEMI_EXPECTED,
-   UNBAL_BRACES,
-   FUNC_UNDEF,
-   TYPE_EXPECTED,
-   NEST_FUNC,
-   RET_NOCALL,
-   PAREN_EXPECTED,
-   WHILE_EXPECTED,
-   QUOTE_EXPECTED,
-   NOT_STRING,
-   TOO_MANY_LVARS,
-   DIV_BY_ZERO
+    SYNTAX,
+    UNBAL_PARENS,
+    NO_EXP,
+    EQUALS_EXPECTED,
+    NOT_VAR,
+    PARAM_ERR,
+    SEMI_EXPECTED,
+    UNBAL_BRACES,
+    FUNC_UNDEF,
+    TYPE_EXPECTED,
+    NEST_FUNC,
+    RET_NOCALL,
+    PAREN_EXPECTED,
+    WHILE_EXPECTED,
+    QUOTE_EXPECTED,
+    NOT_STRING,
+    TOO_MANY_LVARS,
+    DIV_BY_ZERO
 };
 
 /**
@@ -85,4 +85,4 @@ int print(void);
  */
 int getnum(void);
 
-#endif //LITTLEC_LITTLEC_LIB_H
+#endif // LITTLEC_LITTLEC_LIB_H

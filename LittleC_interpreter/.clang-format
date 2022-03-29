@@ -1,0 +1,42 @@
+# Common settings
+TabWidth:        4
+IndentWidth:     4
+UseTab:          Never
+
+---
+# C,C++ settings
+Language: Cpp
+BasedOnStyle:  WebKit
+AlignAfterOpenBracket: Align
+BreakBeforeBraces: Allman
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLambdasOnASingleLine: None
+AlwaysBreakBeforeMultilineStrings: true
+BraceWrapping: 
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterObjCDeclaration: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  IndentBraces: true
+  BeforeWhile: true
+ColumnLimit: 132
+IndentCaseLabels: true
+IndentCaseBlocks: true
+IndentWidth: 4
+ObjCBlockIndentWidth: 4
+# DerivePointerAlignment: true
+PointerAlignment: Left
+SpaceAfterCStyleCast: true
+SpacesInCStyleCastParentheses: false
+TabWidth: 4
+UseCRLF: true
+KeepEmptyLinesAtTheStartOfBlocks: false

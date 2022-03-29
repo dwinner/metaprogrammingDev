@@ -1,0 +1,12 @@
+{
+   "editor.formatOnSave": true,
+   "clang-format.executable": "c:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\Llvm\\x64\\bin\\clang-format.exe",
+   "clang-format.language.c.style": "file",
+   "clang-format.language.cpp.style": "file",
+   "[c]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+   },
+   "[cpp]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+   }
+}

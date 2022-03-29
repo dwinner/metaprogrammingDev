@@ -6,25 +6,25 @@
 #ifndef LITTLEC_LITTLEC_PARSER_H
 #define LITTLEC_LITTLEC_PARSER_H
 
-#include <setjmp.h>
-#include <math.h>
+#include "littlec_lib.h"
 #include <ctype.h>
+#include <math.h>
+#include <setjmp.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
-#include "littlec_lib.h"
 
-#define NUM_FUNC        100
+#define NUM_FUNC 100
 #define NUM_GLOBAL_VARS 100
-#define NUM_LOCAL_VARS  200
-#define ID_LEN          32
-#define FUNC_CALLS      31
-#define PROG_SIZE       10000
-#define FOR_NEST        31
+#define NUM_LOCAL_VARS 200
+#define ID_LEN 32
+#define FUNC_CALLS 31
+#define PROG_SIZE 10000
+#define FOR_NEST 31
 
 // Secure function compatibility
 #if !defined(_MSC_VER) || _MSC_VER < 1400
-#define strcpy_s(dest, count, source) strncpy( (dest), (source), (count) )
+#define strcpy_s(dest, count, source) strncpy((dest), (source), (count))
 #endif
 
 /**
@@ -32,21 +32,21 @@
  */
 enum tokens
 {
-   ARG,
-   CHAR,
-   INT,
-   IF,
-   ELSE,
-   FOR,
-   DO,
-   WHILE,
-   SWITCH,
-   RETURN,
-   CONTINUE,
-   BREAK,
-   EOL,
-   FINISHED,
-   END
+    ARG,
+    CHAR,
+    INT,
+    IF,
+    ELSE,
+    FOR,
+    DO,
+    WHILE,
+    SWITCH,
+    RETURN,
+    CONTINUE,
+    BREAK,
+    EOL,
+    FINISHED,
+    END
 };
 
 /**
@@ -54,12 +54,12 @@ enum tokens
  */
 enum double_ops
 {
-   LT = 1,
-   LE,
-   GT,
-   GE,
-   EQ,
-   NE
+    LT = 1,
+    LE,
+    GT,
+    GE,
+    EQ,
+    NE
 };
 
 /**
@@ -67,9 +67,9 @@ enum double_ops
  */
 struct var_type
 {
-   char var_name[ID_LEN];
-   int v_type;
-   int value;
+    char var_name[ID_LEN];
+    int v_type;
+    int value;
 };
 
 /**
@@ -77,40 +77,40 @@ struct var_type
  */
 struct func_type
 {
-   /**
-    * Function name
-    */
-   char func_name[ID_LEN];
+    /**
+     * Function name
+     */
+    char func_name[ID_LEN];
 
-   /**
-    * Return type
-    */
-   int ret_type;
+    /**
+     * Return type
+     */
+    int ret_type;
 
-   /**
-    * Location of function entry point in file
-    */
-   char *loc;
-}/* func_stack[NUM_FUNC]*/;
+    /**
+     * Location of function entry point in file
+     */
+    char *loc;
+} /* func_stack[NUM_FUNC]*/;
 
 /**
  * @brief Keyword table
  */
 struct commands
 {
-   char command[20];
-   char tok;
+    char command[20];
+    char tok;
 };
 
 struct intern_func_type
 {
-   char *f_name; /* function name */
-   int (*p)(void);   /* pointer to the function */
+    char *f_name; /* function name */
+    int (*p)(void); /* pointer to the function */
 };
 
-//int get_token(void);
+// int get_token(void);
 
-//void sntx_err(int error);
+// void sntx_err(int error);
 
 /**
  * @brief Entry point into parser.
@@ -193,7 +193,7 @@ int is_delim(char c);
  */
 int is_white(char c);
 
-//int find_var(char *s);
+// int find_var(char *s);
 
 /**
  * @brief Find internal function
@@ -202,9 +202,9 @@ int is_white(char c);
  */
 int internal_func(char *s);
 
-//int is_var(char *s);
+// int is_var(char *s);
 
-//char *find_func(char *name);
+// char *find_func(char *name);
 
 /**
  * @brief Look up a token's internal representation in the token table
@@ -219,7 +219,7 @@ char look_up(char *s);
  */
 char get_token(void);
 
-//void call(void);
+// void call(void);
 
 /**
  * @brief An in-place modification find and replace of the string.
@@ -230,4 +230,4 @@ char get_token(void);
  */
 static void str_replace(char *line, const char *search, const char *replace);
 
-#endif //LITTLEC_LITTLEC_PARSER_H
+#endif // LITTLEC_LITTLEC_PARSER_H

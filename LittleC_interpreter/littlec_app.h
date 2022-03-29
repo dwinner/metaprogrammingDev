@@ -1,28 +1,28 @@
 #ifndef LITTLEC_LITTLEC_APP_H
 #define LITTLEC_LITTLEC_APP_H
 
-#include <stdio.h>
-#include <setjmp.h>
-#include <math.h>
+#include "littlec_parser.h"
 #include <ctype.h>
+#include <math.h>
+#include <setjmp.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "littlec_parser.h"
 
-#define NUM_FUNC        100
+#define NUM_FUNC 100
 #define NUM_GLOBAL_VARS 100
-#define NUM_LOCAL_VARS  200
-#define NUM_BLOCK       100
-#define ID_LEN          32
-#define FUNC_CALLS      31
-#define NUM_PARAMS      31
-#define PROG_SIZE       10000
-#define LOOP_NEST       31
+#define NUM_LOCAL_VARS 200
+#define NUM_BLOCK 100
+#define ID_LEN 32
+#define FUNC_CALLS 31
+#define NUM_PARAMS 31
+#define PROG_SIZE 10000
+#define LOOP_NEST 31
 
 // Secure function compatibility
 #if !defined(_MSC_VER) || _MSC_VER < 1400
-#define strcpy_s(dest, count, source) strncpy( (dest), (source), (count) )
-#define fopen_s(pFile,filename,mode) ((*(pFile))=fopen((filename),(mode)))==NULL
+#define strcpy_s(dest, count, source) strncpy((dest), (source), (count))
+#define fopen_s(pFile, filename, mode) ((*(pFile)) = fopen((filename), (mode))) == NULL
 #endif
 
 /**
@@ -146,4 +146,4 @@ char *find_func(char *name);
  */
 void call(void);
 
-#endif //LITTLEC_LITTLEC_APP_H
+#endif // LITTLEC_LITTLEC_APP_H
