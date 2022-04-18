@@ -11,7 +11,7 @@ namespace ValidatingSymbolUsage
 {
     internal static class MainEntry
     {
-        private const string CanFile = "usages_full.can";
+        private const string CanFile = "usages.can";
 
         private static void Main()
         {

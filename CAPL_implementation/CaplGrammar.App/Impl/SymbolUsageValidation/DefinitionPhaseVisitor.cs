@@ -68,7 +68,7 @@ namespace CaplGrammar.Application.Impl.SymbolUsageValidation
 
             // push new scope by making new one that points to enclosing scope
             var function = new FunctionSymbol(funcName, returnType, _currentScope, userDefType);
-            _currentScope.Define(function); // define function in current scope
+            _currentScope?.Define(function); // define function in current scope
             SaveScope(context, function); // push: set function's parent to current
             _currentScope = function;
         }
@@ -166,7 +166,7 @@ namespace CaplGrammar.Application.Impl.SymbolUsageValidation
         {
             var userDefType = userType?.Text ?? string.Empty;
             var variable = new VariableSymbol(aNameToken.Text, aType, userDefType);
-            _currentScope.Define(variable);
+            _currentScope?.Define(variable);
         }
 
         private void SaveScope(IParseTree aContext, IScope aScope)
