@@ -93,7 +93,7 @@ namespace CaplGrammar.Application.Impl.SymbolUsageValidation
 
       public override void EnterFunctionDefinition(CaplParser.FunctionDefinitionContext context)
       {
-         _currentScope = _scopes.Get(context);
+          _currentScope = _scopes.Get(context);
       }
 
       public override void ExitFunctionDefinition(CaplParser.FunctionDefinitionContext context)
