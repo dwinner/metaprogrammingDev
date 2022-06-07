@@ -460,7 +460,7 @@ ethernetType: (EthernetPacket | EthernetStatus) (
 		| Identifier (Minus | DoubleColon)? Identifier
 	);
 
-// TODO: there is no point to use all alternatives for Identifier-rule for key events
+// TODO: there is no point in using all alternatives for Identifier-rule for key events
 keyEventType: Key (Constant | Identifier | Star);
 Key: [kK][eE][yY];
 
