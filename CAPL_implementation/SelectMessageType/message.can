@@ -1,6 +1,6 @@
 variables
 {
-   message gDiagIPCPhysicalRequest_const diagnosticTesterPresent_msg;
+   const message gDiagIPCPhysicalRequest_const diagnosticTesterPresent_msg;
    message * eAll1, eAll2;
    message EngData engMsg;
    message * allMsg;
