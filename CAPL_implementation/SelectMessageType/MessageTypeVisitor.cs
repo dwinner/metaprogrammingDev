@@ -5,11 +5,11 @@ using CaplGrammar.Core;
 
 namespace SelectMessageType
 {
-    internal class MessageTypeVisitor : CaplBaseVisitor<Dictionary<string, List<string>>>
+    internal class MessageTypeVisitor : CaplBaseVisitor<int>
     {
         public Dictionary<string, List<string>> MessageVariables { get; } = new Dictionary<string, List<string>>();
 
-        public override Dictionary<string, List<string>> VisitDeclaration(CaplParser.DeclarationContext context)
+        public override int VisitDeclaration(CaplParser.DeclarationContext context)
         {
             var messageType = string.Empty;
 
@@ -25,6 +25,13 @@ namespace SelectMessageType
                 var messageTypeCtx = typeSpecCtx?.messageType();
                 if (messageTypeCtx != null)
                 {
+                    // Filter it's type for only 'Message' lexer rule
+                    var trivialMessage = messageTypeCtx.Message();
+                    if (trivialMessage == null)
+                    {
+                        return base.VisitDeclaration(context);
+                    }
+
                     var children = messageTypeCtx.children;
 
                     /* According to the parser rule messageType in Capl.g4, the 1st child is always keyword
