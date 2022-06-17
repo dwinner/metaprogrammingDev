@@ -20,6 +20,20 @@ namespace CaplGrammar.Application.Impl.SymbolUsageValidation
 
         public GlobalSpaceScope GlobalScope { get; private set; }
 
+        public override void EnterExternalDeclaration(CaplParser.ExternalDeclarationContext context)
+        {
+            var text = context.GetText();
+
+            base.EnterExternalDeclaration(context);
+        }
+
+        public override void ExitExternalDeclaration(CaplParser.ExternalDeclarationContext context)
+        {
+            var text = context.GetText();
+
+            base.ExitExternalDeclaration(context);
+        }
+
         public override void EnterPrimaryExpression(CaplParser.PrimaryExpressionContext context)
         {
             // primary expr is left recursive, so the root is being walking only once: when there is no parent context
