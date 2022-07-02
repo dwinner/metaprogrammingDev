@@ -1,7 +1,7 @@
 /** 
  CAPL grammar implementation.
  */
-
+ 
 grammar Capl;
 
 primaryExpression

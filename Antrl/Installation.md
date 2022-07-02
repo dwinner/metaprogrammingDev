@@ -1,5 +1,3 @@
-
-
 1. Install your current JDK into c:/jdk;
 
 2. Edit environment variables under User variables;
@@ -14,10 +12,10 @@
 
 4. Edit environment variables under System variables;
    - Create or edit CLASSPATH: add item C:\JavaLib\antlr.jar;
-   - Create variable JAVA_HOME=C:\jdk;
+   - Create variable JAVA_HOME=C:\jdk-15.0.1;
    - Add to Path variable: C:\JavaLib;
-   - Add to Path variable: C:\jdk;
-   - Add to Path variable: C:\jdk\bin;
+   - Add to Path variable: C:\jdk-15.0.1;
+   - Add to Path variable: C:\jdk-15.0.1\bin;
    
 5. Restart your PC to apply the configuration changes;
    - Run cmd;
