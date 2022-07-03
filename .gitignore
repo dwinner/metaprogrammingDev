@@ -28,6 +28,8 @@ cmake-build-debug/
 
 # IntelliJ IDEA metadata files
 .idea/
+out/
+*.class
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
