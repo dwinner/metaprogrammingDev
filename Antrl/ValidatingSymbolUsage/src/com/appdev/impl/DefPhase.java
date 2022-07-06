@@ -16,18 +16,18 @@ public class DefPhase extends CymbolBaseListener
    public GlobalScope globals;
    Scope currentScope; // define symbols in this scope
 
-   public void enterFile(CymbolParser.FileContext ctx)
+   public void enterFile (CymbolParser.FileContext ctx)
    {
       globals = new GlobalScope(null);
       currentScope = globals;
    }
 
-   public void exitFile(CymbolParser.FileContext ctx)
+   public void exitFile (CymbolParser.FileContext ctx)
    {
       System.out.println(globals);
    }
 
-   public void enterFunctionDecl(CymbolParser.FunctionDeclContext ctx)
+   public void enterFunctionDecl (CymbolParser.FunctionDeclContext ctx)
    {
       String name = ctx.ID().getText();
       int typeTokenType = ctx.type().start.getType();
@@ -40,41 +40,41 @@ public class DefPhase extends CymbolBaseListener
       currentScope = function; // Current scope is now function scope
    }
 
-   void saveScope(ParserRuleContext ctx, Scope s)
+   void saveScope (ParserRuleContext ctx, Scope s)
    {
       scopes.put(ctx, s);
    }
 
-   public void exitFunctionDecl(CymbolParser.FunctionDeclContext ctx)
+   public void exitFunctionDecl (CymbolParser.FunctionDeclContext ctx)
    {
       System.out.println(currentScope);
       currentScope = currentScope.getEnclosingScope(); // pop scope
    }
 
-   public void enterBlock(CymbolParser.BlockContext ctx)
+   public void enterBlock (CymbolParser.BlockContext ctx)
    {
       // push new local scope
       currentScope = new LocalScope(currentScope);
       saveScope(ctx, currentScope);
    }
 
-   public void exitBlock(CymbolParser.BlockContext ctx)
+   public void exitBlock (CymbolParser.BlockContext ctx)
    {
       System.out.println(currentScope);
       currentScope = currentScope.getEnclosingScope(); // pop scope
    }
 
-   public void exitFormalParameter(CymbolParser.FormalParameterContext ctx)
+   public void exitFormalParameter (CymbolParser.FormalParameterContext ctx)
    {
       defineVar(ctx.type(), ctx.ID().getSymbol());
    }
 
-   public void exitVarDecl(CymbolParser.VarDeclContext ctx)
+   public void exitVarDecl (CymbolParser.VarDeclContext ctx)
    {
       defineVar(ctx.type(), ctx.ID().getSymbol());
    }
 
-   void defineVar(CymbolParser.TypeContext typeCtx, Token nameToken)
+   void defineVar (CymbolParser.TypeContext typeCtx, Token nameToken)
    {
       int typeTokenType = typeCtx.start.getType();
       Symbol.Type type = CheckSymbols.getType(typeTokenType);
